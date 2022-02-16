@@ -2,6 +2,7 @@ package fr.eni.projet.enchere.mlj.bo;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class ArticleVendu implements Serializable{
 	
@@ -17,7 +18,7 @@ public class ArticleVendu implements Serializable{
 	private LocalDate dateFinEncheres;
 	private int misAPrix;
 	private int prixVente;
-	private String étatVente;
+	private String etatVente;
 	
 	private Retrait lieuRetrait;
 	private Utilisateur Acquereur;
@@ -31,7 +32,23 @@ public class ArticleVendu implements Serializable{
 
 
 	public ArticleVendu(Integer noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
-			LocalDate dateFinEncheres, int misAPrix, int prixVente, String étatVente, Retrait lieuRetrait,
+			LocalDate dateFinEncheres, int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait,
+			Utilisateur vendeur, Categorie categorieArticle) {
+		this.noArticle = noArticle;
+		this.nomArticle = nomArticle;
+		this.description = description;
+		this.dateDebutEncheres = dateDebutEncheres;
+		this.dateFinEncheres = dateFinEncheres;
+		this.misAPrix = misAPrix;
+		this.prixVente = prixVente;
+		this.etatVente = etatVente;
+		this.lieuRetrait = lieuRetrait;
+		Vendeur = vendeur;
+		this.categorieArticle = categorieArticle;
+	}
+
+	public ArticleVendu(Integer noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
+			LocalDate dateFinEncheres, int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait,
 			Utilisateur acquereur, Utilisateur vendeur, Categorie categorieArticle) {
 		this.noArticle = noArticle;
 		this.nomArticle = nomArticle;
@@ -40,7 +57,7 @@ public class ArticleVendu implements Serializable{
 		this.dateFinEncheres = dateFinEncheres;
 		this.misAPrix = misAPrix;
 		this.prixVente = prixVente;
-		this.étatVente = étatVente;
+		this.etatVente = etatVente;
 		this.lieuRetrait = lieuRetrait;
 		Acquereur = acquereur;
 		Vendeur = vendeur;
@@ -49,7 +66,7 @@ public class ArticleVendu implements Serializable{
 
 
 	public ArticleVendu(String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres,
-			int misAPrix, int prixVente, String étatVente, Retrait lieuRetrait, Utilisateur acquereur,
+			int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait, Utilisateur acquereur,
 			Utilisateur vendeur, Categorie categorieArticle) {
 		this.nomArticle = nomArticle;
 		this.description = description;
@@ -57,7 +74,7 @@ public class ArticleVendu implements Serializable{
 		this.dateFinEncheres = dateFinEncheres;
 		this.misAPrix = misAPrix;
 		this.prixVente = prixVente;
-		this.étatVente = étatVente;
+		this.etatVente = etatVente;
 		this.lieuRetrait = lieuRetrait;
 		Acquereur = acquereur;
 		Vendeur = vendeur;
@@ -66,7 +83,7 @@ public class ArticleVendu implements Serializable{
 
 
 	public ArticleVendu(String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres,
-			int misAPrix, int prixVente, String étatVente, Retrait lieuRetrait, Utilisateur vendeur,
+			int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait, Utilisateur vendeur,
 			Categorie categorieArticle) {
 		this.nomArticle = nomArticle;
 		this.description = description;
@@ -74,12 +91,17 @@ public class ArticleVendu implements Serializable{
 		this.dateFinEncheres = dateFinEncheres;
 		this.misAPrix = misAPrix;
 		this.prixVente = prixVente;
-		this.étatVente = étatVente;
+		this.etatVente = etatVente;
 		this.lieuRetrait = lieuRetrait;
 		Vendeur = vendeur;
 		this.categorieArticle = categorieArticle;
 	}
 
+	
+
+	
+
+	
 
 	public Integer getNoArticle() {
 		return noArticle;
@@ -151,13 +173,13 @@ public class ArticleVendu implements Serializable{
 	}
 
 
-	public String getÉtatVente() {
-		return étatVente;
+	public String getetatVente() {
+		return etatVente;
 	}
 
 
-	public void setÉtatVente(String étatVente) {
-		this.étatVente = étatVente;
+	public void setetatVente(String etatVente) {
+		this.etatVente = etatVente;
 	}
 
 
@@ -205,7 +227,7 @@ public class ArticleVendu implements Serializable{
 	public String toString() {
 		return "ArticleVendu [noArticle=" + noArticle + ", nomArticle=" + nomArticle + ", description=" + description
 				+ ", dateDebutEncheres=" + dateDebutEncheres + ", dateFinEncheres=" + dateFinEncheres + ", misAPrix="
-				+ misAPrix + ", prixVente=" + prixVente + ", étatVente=" + étatVente + ", lieuRetrait=" + lieuRetrait
+				+ misAPrix + ", prixVente=" + prixVente + ", etatVente=" + etatVente + ", lieuRetrait=" + lieuRetrait
 				+ ", Acquereur=" + Acquereur + ", Vendeur=" + Vendeur + ", categorieArticle=" + categorieArticle + "]";
 	}
 	

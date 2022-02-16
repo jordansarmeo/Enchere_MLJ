@@ -30,6 +30,21 @@ public class ArticleVendu implements Serializable{
 		super();
 	}
 
+	
+
+	public ArticleVendu(Integer noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
+			LocalDate dateFinEncheres, int misAPrix, int prixVente, String etatVente) {
+		this.noArticle = noArticle;
+		this.nomArticle = nomArticle;
+		this.description = description;
+		this.dateDebutEncheres = dateDebutEncheres;
+		this.dateFinEncheres = dateFinEncheres;
+		this.misAPrix = misAPrix;
+		this.prixVente = prixVente;
+		this.etatVente = etatVente;
+	}
+
+
 
 	public ArticleVendu(Integer noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
 			LocalDate dateFinEncheres, int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait,

@@ -14,6 +14,7 @@ import fr.eni.projet.enchere.mlj.bo.Retrait;
 import fr.eni.projet.enchere.mlj.bo.Utilisateur;
 import fr.eni.projet.enchere.mlj.dal.ArticleDAO;
 import fr.eni.projet.enchere.mlj.dal.CodesResultatDAL;
+import fr.eni.projet.enchere.mlj.dal.ConnectionProvider;
 
 public class ArticleDAOJdbcImpl implements ArticleDAO{
 	
@@ -71,7 +72,7 @@ public class ArticleDAOJdbcImpl implements ArticleDAO{
 			
 			while (rs.next()) {
 				art = new ArticleVendu(rs.getInt("noArticle"), rs.getString("nomArticle"), rs.getString("description"), rs.getDate("dateDebutENcheres"),
-						rs.getDate("DateFinEnchere"), rs.getInt("misAPrix"), rs.getInt("prixVente"), rs.getString("etatVente"), rs.getString("lieuRetrait"), rs.getString("Vendeur"), rs.getString("categorieArticle"));
+						rs.getDate("DateFinEnchere"), rs.getInt("misAPrix"), rs.getInt("prixVente"), rs.getString("etatVente"));
 			}
 			liste.add(art);
 			

@@ -10,6 +10,7 @@ import java.util.List;
 import fr.eni.projet.enchere.mlj.BusinessException;
 import fr.eni.projet.enchere.mlj.bo.Utilisateur;
 import fr.eni.projet.enchere.mlj.dal.CodesResultatDAL;
+import fr.eni.projet.enchere.mlj.dal.ConnectionProvider;
 import fr.eni.projet.enchere.mlj.dal.UtilisateurDAO;
 
 
@@ -65,14 +66,14 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 	public Utilisateur SelectMonProfil(String pseudo) throws BusinessException
 	{
 		ResultSet rs = null;
-		
+		Utilisateur u = null;
 		try(Connection cnx = ConnectionProvider.getConnection())
 		{
 			PreparedStatement pstmt = cnx.prepareStatement(SelectMonProfil);
 			pstmt.setString(1, pseudo);
 			
 			rs = pstmt.executeQuery();
-			Utilisateur u = null;
+			
 			if(rs.next()) {
 				u= new Utilisateur(rs.getInt("noUtilisateur"), rs.getString("pseudo"), rs.getString("nom"), rs.getString("prenom"),rs.getString("email"), 
 						rs.getInt("telephone"), rs.getString("rue"), rs.getInt("codePostal"), rs.getString("ville"), rs.getString("motDePasse"), rs.getInt("credit"));
@@ -82,12 +83,13 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 		{
 			e.printStackTrace();
 		
-		}	
+		}	return u;
 	}
 	//afficher profil d'autre utilisateur
 	public Utilisateur SelectByPseudo(String pseudo) throws BusinessException
 	{
 		ResultSet rs = null;
+		Utilisateur u = null;
 		
 		try(Connection cnx = ConnectionProvider.getConnection())
 		{
@@ -95,7 +97,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 			pstmt.setString(1, pseudo);
 			
 			rs = pstmt.executeQuery();
-			Utilisateur u = null;
+			
 			if(rs.next()) {
 				u= new Utilisateur(rs.getInt("noUtilisateur"), rs.getString("pseudo"), rs.getString("nom"), rs.getString("prenom"),rs.getString("email"), 
 						rs.getInt("telephone"), rs.getString("rue"), rs.getInt("codePostal"), rs.getString("ville"));
@@ -105,7 +107,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 		{
 			e.printStackTrace();
 		
-		}	
+		}	return u;
 	}
 	
 	public void upDate(Utilisateur u)throws BusinessException
@@ -141,7 +143,8 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 			PreparedStatement pstmt = cnx.prepareStatement(Delete);
 			pstmt.setInt(1, noUtilisateur);
 			pstmt.executeUpdate();
-		} 	catch(Exception e)
+			
+		} catch(Exception e)
 		{
 			e.printStackTrace();
 			BusinessException businessException = new BusinessException();

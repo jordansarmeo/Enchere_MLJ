@@ -26,7 +26,7 @@ public class ServletValidantUtilisateur extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	 
+		getServletContext().getRequestDispatcher("/pageProfilUtilisateur.html").forward(request, response);
 		
 		
 		 

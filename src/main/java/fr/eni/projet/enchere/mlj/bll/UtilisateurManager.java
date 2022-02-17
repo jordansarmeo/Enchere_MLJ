@@ -53,7 +53,7 @@ public class UtilisateurManager {
 		}
 	}
 	
-	public void ajouterUtilisateur(Utilisateur u) throws BusinessException
+	public void ajouterUtilisateur(Utilisateur u ) throws BusinessException
 	{
 		
 		if(u.getNoUtilisateur()!= null){

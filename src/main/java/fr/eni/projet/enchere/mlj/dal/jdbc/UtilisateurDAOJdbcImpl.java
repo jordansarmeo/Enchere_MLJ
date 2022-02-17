@@ -151,6 +151,8 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 			businessException.ajouterErreur(CodesResultatDAL.DELETE_OBJET_ECHEC);
 		}
 	}
+
+	
 	
 	
 }

@@ -23,6 +23,13 @@ public class Retrait implements Serializable{
 		this.ville = ville;
 		this.article = article;
 	}
+	
+
+	public Retrait(String rue, int codePostal, String ville) {
+		this.rue = rue;
+		this.codePostal = codePostal;
+		this.ville = ville;
+	}
 
 	public String getRue() {
 		return rue;
@@ -60,6 +67,8 @@ public class Retrait implements Serializable{
 	public String toString() {
 		return "Retrait [rue=" + rue + ", codePostal=" + codePostal + ", ville=" + ville + ", article=" + article + "]";
 	}
+
+	
 	
 	
 

@@ -5,6 +5,7 @@ import java.util.List;
 
 import fr.eni.projet.enchere.mlj.BusinessException;
 import fr.eni.projet.enchere.mlj.bo.ArticleVendu;
+import fr.eni.projet.enchere.mlj.bo.Utilisateur;
 import fr.eni.projet.enchere.mlj.dal.ArticleDAO;
 import fr.eni.projet.enchere.mlj.dal.DAOFactory;
 
@@ -71,5 +72,7 @@ public class ArticleManager {
 	}
 	
 	
-	
+	public ArticleVendu selectionnerArticle(String nom) throws BusinessException{
+		return this.articleDao.selectByNom(nom);
+	}
 }

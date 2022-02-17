@@ -21,6 +21,12 @@ public class Categorie implements Serializable{
 		this.libelle = libelle;
 	}
 
+	
+
+	public Categorie(String libelle) {
+		this.libelle = libelle;
+	}
+
 
 	public int getNoCategorie() {
 		return noCategorie;
@@ -46,6 +52,12 @@ public class Categorie implements Serializable{
 	public String toString() {
 		return "Categorie [noCategorie=" + noCategorie + ", libelle=" + libelle + "]";
 	}
+
+
+	
+
+
+	
 
 	
 }

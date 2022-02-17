@@ -3,9 +3,11 @@ package fr.eni.projet.enchere.mlj.dal.jdbc;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 
 import fr.eni.projet.enchere.mlj.BusinessException;
 import fr.eni.projet.enchere.mlj.bo.ArticleVendu;
@@ -38,8 +40,8 @@ public class ArticleDAOJdbcImpl implements ArticleDAO{
 			pstmt.setDate(3, java.sql.Date.valueOf(art.getDateDebutEncheres()));
 			pstmt.setDate(4, java.sql.Date.valueOf(art.getDateFinEncheres()));
 			pstmt.setInt(5, art.getMisAPrix());
-			pstmt.setString(6,  art.getLieuRetrait());
-			pstmt.setString(7,art.getCategorieArticle());
+			((ArticleVendu) pstmt).setLieuRetrait(art.getLieuRetrait());
+			((ArticleVendu) pstmt).setCategorieArticle(art.getCategorieArticle());
 			
 			
 			pstmt.executeUpdate();
@@ -71,8 +73,8 @@ public class ArticleDAOJdbcImpl implements ArticleDAO{
 			rs = stmt.executeQuery(SelectAll);
 			
 			while (rs.next()) {
-				art = new ArticleVendu(rs.getInt("noArticle"), rs.getString("nomArticle"), rs.getString("description"), rs.getDate("dateDebutENcheres"),
-						rs.getDate("DateFinEnchere"), rs.getInt("misAPrix"), rs.getInt("prixVente"), rs.getString("etatVente"));
+				art = new ArticleVendu(rs.getInt("noArticle"), rs.getString("nomArticle"), rs.getString("description"), rs.getDate("dateDebutENcheres").toLocalDate(),
+						rs.getDate("DateFinEnchere").toLocalDate(), rs.getInt("misAPrix"), rs.getInt("prixVente"), rs.getString("etatVente"), ((ArticleVendu) rs).getLieuRetrait(), ((ArticleVendu) rs).getVendeur(), ((ArticleVendu) rs).getCategorieArticle());
 			}
 			liste.add(art);
 			
@@ -97,8 +99,8 @@ public class ArticleDAOJdbcImpl implements ArticleDAO{
 			pstmt.executeUpdate();
 			
 			if (rs.next()) {
-				art= new ArticleVendu(rs.getInt("noArticle"), rs.getString("nomArticle"), rs.getString("description"), rs.getDate("dateDebutENcheres"),
-						rs.getDate("DateFinEnchere"), rs.getInt("misAPrix"), rs.getInt("prixVente"), rs.getString("etatVente"), rs.getString("lieuRetrait"), rs.getString("Vendeur"), rs.getString("categorieArticle"));
+				art= new ArticleVendu(rs.getInt("noArticle"), rs.getString("nomArticle"), rs.getString("description"), rs.getDate("dateDebutENcheres").toLocalDate(),
+						rs.getDate("DateFinEnchere").toLocalDate(), rs.getInt("misAPrix"), rs.getInt("prixVente"), rs.getString("etatVente"),  ((ArticleVendu) rs).getLieuRetrait(), ((ArticleVendu) rs).getVendeur(), ((ArticleVendu) rs).getCategorieArticle());
 			}
 			
 		}catch(Exception e)
@@ -109,5 +111,8 @@ public class ArticleDAOJdbcImpl implements ArticleDAO{
 		}	
 		return art;
 	}
+
+	
+	
 	
 }

@@ -1,6 +1,9 @@
 package fr.eni.projet.enchere.mlj.bll;
 
 
+import java.util.List;
+
+
 import fr.eni.projet.enchere.mlj.BusinessException;
 import fr.eni.projet.enchere.mlj.bo.Utilisateur;
 import fr.eni.projet.enchere.mlj.dal.DAOFactory;
@@ -86,4 +89,12 @@ public class UtilisateurManager {
 		}
 	}
 
+	
+	public Utilisateur selectionnerMonProfil(String pseudo) throws BusinessException{
+		return this.utilisateurDao.SelectMonProfil(pseudo);
+	}
+	
+	public Utilisateur selectionnerAutre(String pseudo) throws BusinessException{
+		return this.utilisateurDao.SelectByPseudo(pseudo);
+	}
 }

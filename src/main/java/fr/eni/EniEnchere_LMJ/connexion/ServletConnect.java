@@ -39,7 +39,7 @@ public class ServletConnect extends HttpServlet {
 		try {
 			Context context = new InitialContext();
 			//Recherche de la ressource
-			DataSource dataSource = (DataSource)context.lookup("java:comp/env/jdbc/pool_cnx");
+			DataSource dataSource = (DataSource)context.lookup("java:comp/env/jdbc/pool_cnx"); 
 			//Demande d'une connexion. La méthode getConnection met la demande en attente tant qu'il n'y a pas de connexion disponible
 			Connection cnx = dataSource.getConnection();
 			//Exploitation de la connexion

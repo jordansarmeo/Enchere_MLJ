@@ -40,6 +40,21 @@ public class zonesecure extends HttpServlet {
     	 
     	String pseudo = request.getParameter("pseudo");
     	String motDePasse = request.getParameter("motDePasse");
+    	
+    	
+    	
+    	if(session.getAttribute("pseudo") != null)
+		{
+			pseudo=(String)session.getAttribute("pseudo");
+		}
+		
+    	if(session.getAttribute("motDePasse") != null)
+		{
+			pseudo=(String)session.getAttribute("motDePasse");
+		}
+		
+		
+		
     	System.out.println(pseudo);
     	System.out.println(motDePasse);
     	// Etape 2 : Soumettre les paramètres de la requête à la couche service et récupérer résultat

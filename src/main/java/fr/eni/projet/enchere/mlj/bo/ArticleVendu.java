@@ -34,7 +34,7 @@ public class ArticleVendu implements Serializable{
 
 	public ArticleVendu(Integer noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
 			LocalDate dateFinEncheres, int misAPrix, int prixVente, String etatVente) {
-		this.noArticle = noArticle;
+		
 		this.nomArticle = nomArticle;
 		this.description = description;
 		this.dateDebutEncheres = dateDebutEncheres;
@@ -42,6 +42,7 @@ public class ArticleVendu implements Serializable{
 		this.misAPrix = misAPrix;
 		this.prixVente = prixVente;
 		this.etatVente = etatVente;
+		setNoArticle(noArticle);
 	}
 
 
@@ -49,7 +50,6 @@ public class ArticleVendu implements Serializable{
 	public ArticleVendu(Integer noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
 			LocalDate dateFinEncheres, int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait,
 			Utilisateur vendeur, Categorie categorieArticle) {
-		this.noArticle = noArticle;
 		this.nomArticle = nomArticle;
 		this.description = description;
 		this.dateDebutEncheres = dateDebutEncheres;
@@ -60,12 +60,12 @@ public class ArticleVendu implements Serializable{
 		this.lieuRetrait = lieuRetrait;
 		Vendeur = vendeur;
 		this.categorieArticle = categorieArticle;
+		setNoArticle(noArticle);
 	}
 
 	public ArticleVendu(Integer noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
 			LocalDate dateFinEncheres, int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait,
 			Utilisateur acquereur, Utilisateur vendeur, Categorie categorieArticle) {
-		this.noArticle = noArticle;
 		this.nomArticle = nomArticle;
 		this.description = description;
 		this.dateDebutEncheres = dateDebutEncheres;
@@ -77,6 +77,7 @@ public class ArticleVendu implements Serializable{
 		Acquereur = acquereur;
 		Vendeur = vendeur;
 		this.categorieArticle = categorieArticle;
+		setNoArticle(noArticle);
 	}
 
 

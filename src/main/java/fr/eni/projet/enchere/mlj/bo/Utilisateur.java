@@ -40,7 +40,6 @@ public class Utilisateur implements Serializable{
 
 	public Utilisateur(Integer noUtilisateur, String pseudo, String nom, String prenom, String email, int telephone,
 			String rue, int codePostal, String ville) {
-		this.noUtilisateur = noUtilisateur;
 		this.pseudo = pseudo;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -49,13 +48,13 @@ public class Utilisateur implements Serializable{
 		this.rue = rue;
 		this.codePostal = codePostal;
 		this.ville = ville;
+		setNoUtilisateur(noUtilisateur);
 	}
 
 
 
 	public Utilisateur(Integer noUtilisateur, String pseudo, String nom, String prenom, String email, int telephone,
 			String rue, int codePostal, String ville, String motDePasse, int credit) {
-		this.noUtilisateur = noUtilisateur;
 		this.pseudo = pseudo;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -66,6 +65,7 @@ public class Utilisateur implements Serializable{
 		this.ville = ville;
 		this.motDePasse = motDePasse;
 		this.credit = credit;
+		setNoUtilisateur(noUtilisateur);
 	}
 
 
@@ -73,7 +73,6 @@ public class Utilisateur implements Serializable{
 	public Utilisateur(Integer noUtilisateur, String pseudo, String nom, String prenom, String email, int telephone,
 			String rue, int codePostal, String ville, String motDePasse, int credit, int administrateur,
 			List<ArticleVendu> lstArticlesVendus) {
-		this.noUtilisateur = noUtilisateur;
 		this.pseudo = pseudo;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -86,6 +85,7 @@ public class Utilisateur implements Serializable{
 		this.credit = credit;
 		this.administrateur = administrateur;
 		this.lstArticlesVendus = lstArticlesVendus;
+		setNoUtilisateur(noUtilisateur);
 	}
 
 	public Utilisateur(String pseudo, String nom, String prenom, String email, int telephone, String rue,

@@ -46,7 +46,7 @@
 
     <h1 class="text-center">Nouvelle vente</h1>
     <div class="container mt-3">
-      <form action="/ServletValidantAjoutArticle" method="post">  
+      <form action="ServletValidantAjoutArticle" method="post">  
         <div class="row">
             <div class="col">
             <img
@@ -59,7 +59,7 @@
             <div class="row mb-3">
                 <label for="article" class="col-sm-3 col-form-label">Article</label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control"id="article" name="article"/>
+                <input type="text" class="form-control"id="article" name="nomArticle"/>
                 </div>
             </div>
             <div class="row mb-3">
@@ -71,7 +71,7 @@
             <div class="row mb-3">
                 <label for="categories" class="col-sm-3 col-form-label">Catégories</label>
                 <div class="col-sm-9">
-                <select id="categories" name="categories" class="form-control">
+                <select id="categories" name="categorieArticle" class="form-control">
                     <option selected>choisir</option>
                     <option value="1">Informatique</option>
                     <option value="2">Ameublement</option>
@@ -95,13 +95,13 @@
             <div class="row mb-3">
                 <label for="debutEnchere" class="col-sm-3 col-form-label">Début de l'enchéres</label>
                 <div class="col-sm-9">
-                <input type="date" class="form-control" id="debutEnchere" name="debutEnchere">
+                <input type="date" class="form-control" id="debutEnchere" name="dateDebutEncheres">
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="finEnchere" class="col-sm-3 col-form-label">Fin de l'enchéres</label>
                 <div class="col-sm-9">
-                <input type="date" class="form-control" id="finEnchere" name="finEnchere">
+                <input type="date" class="form-control" id="finEnchere" name="dateFinEncheres">
                 </div>
             </div>
             <div class="border border-secondary p-3">
@@ -130,7 +130,7 @@
                 <button type="submit" class="btn btn-success">Enregistrer</button>
                 </div>
                 <div class="col-sm-4">
-                    <button type="submit" class="btn btn-danger">Annuler</button>
+                    <button type="reset" class="btn btn-danger">Annuler</button>
                 </div>
             </div>
 

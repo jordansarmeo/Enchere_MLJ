@@ -36,24 +36,24 @@ public class ServletValidantUtilisateur extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String pseudo;
-		 String nom;
-		 String prenom;
-		 String email;
-		 int telephone;
-		 String rue;
-		 int codePostal;
-		 String ville;
-		 String motDePasse;
-		 String confirmationMotDePasse;
+		 String pseudo = null;
+		 String nom = null;
+		 String prenom = null;
+		 String email = null;
+		 int telephone = 0;
+		 String rue = null;
+		 int codePostal = 0;
+		 String ville = null;
+		 String motDePasse = null;
+		 String confirmationMotDePasse = null;
 		 
 		 pseudo=request.getParameter("pseudo");
 		 nom=request.getParameter("nom");
 		 prenom=request.getParameter("prenom");
 		 email=request.getParameter("email");
-		 //telephone=Integer.parseInt(request.getParameter("telephone"));
+		 telephone=Integer.parseInt(request.getParameter("telephone"));
 		 rue=request.getParameter("rue");
-		 //codePostal=Integer.parseInt(request.getParameter("codePostal"));
+		 codePostal=Integer.parseInt(request.getParameter("codePostal"));
 		 ville=request.getParameter("ville");
 		
 		 motDePasse=request.getParameter("motDePasse");

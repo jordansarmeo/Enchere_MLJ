@@ -3,6 +3,8 @@ package fr.eni.projet.enchere.mlj.servlets;
 import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,12 +36,12 @@ public class ServletValidantAjoutArticle extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String nomArticle;
-		 String description;
-		 LocalDate dateDebutEncheres;
-		 LocalDate dateFinEncheres;
-		 int misAPrix;
-		 int prixVente;
+		 String nomArticle = null;
+		 String description = null;
+		 LocalDate dateDebutEncheres = null;
+		 LocalDate dateFinEncheres = null ;
+		 int misAPrix = 0;
+		 int prixVente = 0;
 		 
 		 String categorieArticle;
 		 String rue;
@@ -49,8 +51,27 @@ public class ServletValidantAjoutArticle extends HttpServlet {
 		 
 		 nomArticle=request.getParameter("nomArticle");
 		 description=request.getParameter("description");
-		 dateDebutEncheres= LocalDate.parse(request.getParameter("dateDebutEncheres"));
-		 dateFinEncheres=LocalDate.parse(request.getParameter("dateFinEncheres"));
+			try
+			{
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+				dateDebutEncheres = LocalDate.parse(request.getParameter("dateDebutEncheres"),dtf);
+			}
+			catch(DateTimeParseException e)
+			{
+				e.printStackTrace();
+			}	
+				
+			try
+			{
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+				dateFinEncheres = LocalDate.parse(request.getParameter("dateFinEncheres"),dtf);
+			}
+			catch(DateTimeParseException e)
+			{
+				e.printStackTrace();
+			}
+		// dateDebutEncheres= LocalDate.parse(request.getParameter("dateDebutEncheres"));
+		// dateFinEncheres=LocalDate.parse(request.getParameter("dateFinEncheres"));
 		 misAPrix=Integer.parseInt(request.getParameter("miseAPrix"));
 		 
 		 rue=request.getParameter("rue");
@@ -67,11 +88,11 @@ public class ServletValidantAjoutArticle extends HttpServlet {
 							e.printStackTrace();
 						}
 					
-			 getServletContext().getRequestDispatcher("resultatLogin.jsp").forward(request, response);
+			 getServletContext().getRequestDispatcher("/resultatLogin.jsp").forward(request, response);
 			 //response.sendRedirect("resultatLogin.jsp");
 		
 			
 	
 	}
-
+			
 }

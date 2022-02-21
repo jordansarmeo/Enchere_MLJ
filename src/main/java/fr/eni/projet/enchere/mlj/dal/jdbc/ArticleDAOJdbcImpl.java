@@ -20,9 +20,9 @@ import fr.eni.projet.enchere.mlj.dal.ConnectionProvider;
 
 public class ArticleDAOJdbcImpl implements ArticleDAO{
 	
-	private static final String INSERT= "INSERT INTO Articles_Vendus(nomArticle, description, dateDebutEncheres, dateFinEncheres, misAPrix, lieuRetrait, categorieArticle) values(?,?,?,?,?,?,?)";
-	private static final String SelectAll="SELECT noArticle, nomArticle,descripstion, dateDebutEncheres, dateFinEncheres, misAPrix, prixVente, etatVente, lieuRetrait, Vendeur, categorieArticle" + "from ArticleVendu";
-	private static final String SelectByNom="SELECT  noArticle, nomArticle,descripstion, dateDebutEncheres, dateFinEncheres, misAPrix, prixVente, etatVente, lieuRetrait, Vendeur, categorieArticle" +"where nom=?";
+	private static final String INSERT= "INSERT INTO Articles_Vendus(nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial) values(?,?,?,?,?)";
+	private static final String SelectAll="SELECT no_article, nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, etatVente, lieuRetrait, Vendeur, categorieArticle" + "from ArticleVendu";
+	private static final String SelectByNom="SELECT  no_article, nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, etatVente, lieuRetrait, Vendeur, categorieArticle" +"where nom=?";
 	
 	public void insert(ArticleVendu art) throws BusinessException {
 		if(art==null)

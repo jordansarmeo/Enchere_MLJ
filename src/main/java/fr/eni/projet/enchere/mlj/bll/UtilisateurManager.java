@@ -54,7 +54,7 @@ public class UtilisateurManager {
 		}
 	}
 	
-	public void ajouterUtilisateur(Utilisateur u ) throws BusinessException
+	public Utilisateur ajouterUtilisateur(Utilisateur u ) throws BusinessException
 	{
 		
 		if(u.getNoUtilisateur()!= null){
@@ -66,6 +66,7 @@ public class UtilisateurManager {
 		} catch (BusinessException e) {
 			businessException.ajouterErreur(BLLException.INSERT_OBJET_ECHEC);
 		}
+		return u;
 	}
 	public void modifUtilisateur(Utilisateur u) throws BusinessException
 	{

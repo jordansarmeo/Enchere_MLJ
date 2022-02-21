@@ -19,7 +19,7 @@ public class ArticleManager {
 
 	BusinessException businessException = new BusinessException();
 	
-	public void ajoutArticle(ArticleVendu a) throws BusinessException
+	public ArticleVendu ajoutArticle(ArticleVendu a) throws BusinessException
 	{	boolean valide = true;
 		
 		if(valide = true)
@@ -59,6 +59,7 @@ public class ArticleManager {
 			}
 		}else 
 			businessException.ajouterErreur(BLLException.INSERT_OBJET_ECHEC);
+		return a;
 	}
 	
 	public List<ArticleVendu> getToutArticleVendu()

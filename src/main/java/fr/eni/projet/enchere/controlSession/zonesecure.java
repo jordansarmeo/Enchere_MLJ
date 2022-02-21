@@ -55,13 +55,14 @@ public class zonesecure extends HttpServlet {
 		
 		
 		
-    	System.out.println(pseudo);
-    	System.out.println(motDePasse);
+    	
     	// Etape 2 : Soumettre les paramètres de la requête à la couche service et récupérer résultat
     	
     	User user = new User(pseudo, motDePasse);	
     	//HttpSession maSession = request.getSession();		
     	session.setAttribute("utilisateur", user);
+    	
+    	request.getSession().setAttribute("utilisateur", user);
     	
     	
     	// Etape 3 : Réponse à l'utilisateur

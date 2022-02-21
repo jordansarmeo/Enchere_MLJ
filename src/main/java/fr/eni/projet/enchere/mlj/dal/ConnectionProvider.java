@@ -20,11 +20,13 @@ public abstract class ConnectionProvider {
 		{
 			Context context;
 			try {
-				context = new InitialContext();
-				ConnectionProvider.dataSource = (DataSource)context.lookup("java:comp/env/jdbc/pool_cnx");
-			} catch (NamingException e) {
-				e.printStackTrace();
-				throw new RuntimeException("Impossible d'accéder à la base de données");			}
+				//context = new InitialContext();
+				//ConnectionProvider.dataSource = (DataSource)context.lookup("java:comp/env/jdbc/pool_cnx");
+				ConnectionProvider.dataSource = InitialContext.doLookup("java:comp/env/jdbc/pool_cnx");
+			} catch (NamingException ex) {
+//				e.printStackTrace(); 
+			
+				throw new RuntimeException("Impossible d'accéder à la base de données", ex);			}
 		}
 		
 		/**

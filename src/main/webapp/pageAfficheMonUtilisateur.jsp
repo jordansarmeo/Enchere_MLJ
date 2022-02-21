@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="fr.eni.projet.enchere.mlj.bo.Utilisateur"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+    <%@ page import="fr.eni.projet.enchere.mlj.bo.*"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -20,16 +18,17 @@
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"
     ></script>
-<title>Afficher Utilisateur</title>
+<title>Afficher Mon Profil</title>
 </head>
 <body>
-<% Utilisateur u = (Utilisateur) request.getAttribute("psuedo"); %>
+	<% Utilisateur u = (Utilisateur) request.getAttribute("psuedo"); %>
 <header>
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
               <a class="navbar-brand">ENI-Enchères</a>
             </div>
         </nav>
+</header>
   <div class="text-aling">    
 	   <table class="table table-borderless">
 	  
@@ -78,5 +77,9 @@
 	  </tbody>
 	</table>
 </div>  
+  <div class="form-group mb-0 text-center">
+         <button class="btn btn-outline-success btn-block" type="submit" name="Modification"> Modification </button>
+  </div>
+
 </body>
 </html>

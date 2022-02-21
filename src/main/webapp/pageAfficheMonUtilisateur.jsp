@@ -36,42 +36,49 @@
 	   <tr>
 	      <th scope="row"></th>
 	      <td>Pseudo</td>
-	      <td><%=u.getPseudo()%></td>
+	      <td>jojo44</td>
+	    
 	    </tr>
 	    <tr>
 	      <th scope="row"></th>
 	      <td>Nom</td>
-	      <td><%=u.getNom() %></td>
+	      <td> Dubois </td>
+
 	    </tr>
 	    <tr>
 	      <th scope="row"></th>
 	      <td>Prénom</td>
-	      <td><%=u.getPrenom() %></td>
+	      <td>Jordan</td>
+
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Email</td>
-	      <td><%=u.getEmail() %></td>
+	      <td>duboi@gmail.com</td>
+	    
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Téléphone</td>
-	      <td><%=u.getTelephone() %></td>
+	      <td>0769369852</td>
+	   
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Rue</td>
-	      <td><%=u.getRue() %></td>
+	       <td>Jean Moulin</td>
+	 
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Code Postal</td>
-	      <td><%=u.getCodePostal() %></td>
-	    </tr>
+	      <td>69140</td>
+	   
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Ville</td>
-	      <td><%=u.getVille() %></td>
+	      <td>Lyon</td>
+	      
 	    </tr>
 	   
 	  </tbody>

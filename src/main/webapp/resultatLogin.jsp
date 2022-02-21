@@ -38,7 +38,7 @@
           <div class="d-flex">
             <a class="p-2" href="">Enchères</a>
             <a class="p-2" href="">Vendre un article</a>
-            <a class="p-2" href="">Mon profil</a>
+            <a class="p-2" href="pageAfficheMonUtilisateur.jsp">Mon profil</a>
             <a class="p-2" href="">Déconnexion</a>
           </div>
         </div>

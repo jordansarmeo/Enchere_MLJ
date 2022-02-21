@@ -36,11 +36,11 @@
                 <div class="text-center m-auto">
                    <h4 class="text-uppercase text-center">Mon Profil</h4>
                 </div>
-                <form action="#" method="post">
+                <form action="ServletValidantUtilisateur" method="post">
                     <div class="form-group row">
                         <label for="pseudo" class="col-sm-1 col-form-label">Pseudo</label>
                         <div class="col-sm-5">
-                          <input type="text" class="form-control" id="pseudo" placeholder="pseudo">
+                          <input type="text" class="form-control" name="pseudo" id="pseudo" placeholder="pseudo">
                         </div>
                         <label for="nom" class="col-sm-1 col-form-label">Nom</label>
                         <div class="col-sm-5">
@@ -82,7 +82,7 @@
                     </div>
                     <br>
                     <div class="form-group row">
-                        <label for="password" class="col-sm-1 col-form-label">Mot de passe</label>
+                        <label for="password" name="motDePasse" class="col-sm-1 col-form-label">Mot de passe</label>
                         <div class="col-sm-5">
                           <input type="password" class="form-control" id="password" placeholder="Mot de passe">
                         </div>

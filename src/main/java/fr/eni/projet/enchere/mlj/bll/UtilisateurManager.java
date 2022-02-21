@@ -39,15 +39,15 @@ public class UtilisateurManager {
 		if(u.getEmail()==null || u.getEmail().trim().length()==0){
 			valide = false;
 		}
-		if(u.getTelephone()==0 || u.getTelephone()<0){
-			valide = false;
-		}
+//		if(u.getTelephone()==0 || u.getTelephone()<0){
+//			valide = false;
+//		}
 		if(u.getRue()==null || u.getRue().trim().length()==0){
 			valide = false;
 		}
-		if(u.getCodePostal()==0 || u.getCodePostal()<0){
-			valide = false;
-		}
+//		if(u.getCodePostal()==0 || u.getCodePostal()<0){
+//			valide = false;
+//		}
 		if(u.getMotDePasse()==null || u.getRue().trim().length()==0){
 			valide = false;
 		}

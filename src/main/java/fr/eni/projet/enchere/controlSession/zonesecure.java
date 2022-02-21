@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import fr.eni.projet.enchere.mlj.bo.User;
+import fr.eni.projet.enchere.mlj.bo.Utilisateur;
 
 
 
@@ -35,8 +35,8 @@ public class zonesecure extends HttpServlet {
     	// Recupere la session
     	
     	HttpSession session = request.getSession();
-    	String s=session.getId();
-    	session.setAttribute("id",s);
+    	String s= session.getId();
+    	session.setAttribute("noUtilisateur",s);
     	 
     	String pseudo = request.getParameter("pseudo");
     	String motDePasse = request.getParameter("motDePasse");
@@ -58,7 +58,7 @@ public class zonesecure extends HttpServlet {
     	
     	// Etape 2 : Soumettre les paramètres de la requête à la couche service et récupérer résultat
     	
-    	User user = new User(pseudo, motDePasse);	
+    	Utilisateur user = new Utilisateur(pseudo, motDePasse);	
     	//HttpSession maSession = request.getSession();		
     	session.setAttribute("utilisateur", user);
     	

@@ -26,7 +26,7 @@ public class ServletValidantUtilisateur extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/pageProfilUtilisateur.html").forward(request, response);
+		getServletContext().getRequestDispatcher("/zonesecure").forward(request, response);
 		
 		
 		 
@@ -51,13 +51,14 @@ public class ServletValidantUtilisateur extends HttpServlet {
 		 nom=request.getParameter("nom");
 		 prenom=request.getParameter("prenom");
 		 email=request.getParameter("email");
-		 telephone=Integer.parseInt(request.getParameter("telephone"));
+		 //telephone=Integer.parseInt(request.getParameter("telephone"));
 		 rue=request.getParameter("rue");
-		 codePostal=Integer.parseInt(request.getParameter("codePostal"));
+		 //codePostal=Integer.parseInt(request.getParameter("codePostal"));
 		 ville=request.getParameter("ville");
 		
-		 if ((motDePasse=request.getParameter("motDePasse")).equals(confirmationMotDePasse=request.getParameter("confirmationMotDePasse")));
-		 { 
+		 motDePasse=request.getParameter("motDePasse");
+		confirmationMotDePasse=request.getParameter("confirmationMotDePasse");
+		  
 		
 				 Utilisateur u = new Utilisateur();
 				
@@ -67,9 +68,9 @@ public class ServletValidantUtilisateur extends HttpServlet {
 							e.printStackTrace();
 						}
 					
-			 //getServletContext().getRequestDispatcher("/index.html").forward(request, response);
-			 response.sendRedirect("index.html");
+			 getServletContext().getRequestDispatcher("/zonesecure").forward(request, response);
+			 //response.sendRedirect("/pageProfilUtilisateur.html");
 		
 			}
-	}
+	
 }

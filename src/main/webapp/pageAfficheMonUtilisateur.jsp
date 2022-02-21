@@ -29,7 +29,8 @@
             </div>
         </nav>
 </header>
-  <div class="text-aling">    
+  <div class="text-aling"> 
+  <form action="modificationsProfil.html">  
 	   <table class="table table-borderless">
 	  
 	  <tbody>
@@ -83,10 +84,11 @@
 	   
 	  </tbody>
 	</table>
-</div>  
+
   <div class="form-group mb-0 text-center">
          <button class="btn btn-outline-success btn-block" type="submit" name="Modification"> Modification </button>
   </div>
-
+</form> 
+</div>  
 </body>
 </html>

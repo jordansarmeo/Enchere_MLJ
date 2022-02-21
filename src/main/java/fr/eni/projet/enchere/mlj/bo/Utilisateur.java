@@ -31,6 +31,13 @@ public class Utilisateur implements Serializable{
 	
 	
 	
+	public Utilisateur(String pseudo, String nom) {
+		this.pseudo = pseudo;
+		this.nom = nom;
+	}
+
+
+
 	public Utilisateur(Integer noUtilisateur, String pseudo, String nom, String prenom, String email, int telephone,
 			String rue, int codePostal, String ville) {
 		this.noUtilisateur = noUtilisateur;

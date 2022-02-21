@@ -12,9 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.eni.projet.enchere.mlj.BusinessException;
 import fr.eni.projet.enchere.mlj.bll.ArticleManager;
-import fr.eni.projet.enchere.mlj.bll.UtilisateurManager;
 import fr.eni.projet.enchere.mlj.bo.ArticleVendu;
-import fr.eni.projet.enchere.mlj.bo.Utilisateur;
+
 
 /**
  * Servlet implementation class ServletValidantAjoutArticle
@@ -28,7 +27,7 @@ public class ServletValidantAjoutArticle extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/ajoutArticle.html").forward(request, response);
+		getServletContext().getRequestDispatcher("/resultatLogin.jsp").forward(request, response);
 	}
 
 	/**
@@ -68,8 +67,8 @@ public class ServletValidantAjoutArticle extends HttpServlet {
 							e.printStackTrace();
 						}
 					
-			 //getServletContext().getRequestDispatcher("/index.html").forward(request, response);
-			 response.sendRedirect("index.html");
+			 getServletContext().getRequestDispatcher("resultatLogin.jsp").forward(request, response);
+			 //response.sendRedirect("resultatLogin.jsp");
 		
 			
 	

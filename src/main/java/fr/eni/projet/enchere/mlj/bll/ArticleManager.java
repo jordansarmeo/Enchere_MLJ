@@ -3,6 +3,7 @@ package fr.eni.projet.enchere.mlj.bll;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import fr.eni.projet.enchere.mlj.BusinessException;
 import fr.eni.projet.enchere.mlj.bo.ArticleVendu;
 import fr.eni.projet.enchere.mlj.bo.Utilisateur;
@@ -75,5 +76,21 @@ public class ArticleManager {
 	
 	public ArticleVendu selectionnerArticle(String nom) throws BusinessException{
 		return this.articleDao.selectByNom(nom);
+	}
+	
+	public void encherir(ArticleVendu art) throws BusinessException
+	{
+		try {
+			
+			articleDao.encherir(art);
+			
+		}catch (BusinessException e) {
+			businessException.ajouterErreur(BLLException.ECHEC);
+		}
+	}
+	public ArticleVendu SelectById(int id)throws BusinessException
+	{
+		return this.articleDao.SelectById(id);
+		
 	}
 }

@@ -13,5 +13,8 @@ public interface ArticleDAO {
 	
 	public ArticleVendu selectByNom(String nomArticle)throws BusinessException;
 	
+	public void encherir(ArticleVendu art) throws BusinessException;
+	
+	public ArticleVendu SelectById(int noArticle)throws BusinessException;
 
 }

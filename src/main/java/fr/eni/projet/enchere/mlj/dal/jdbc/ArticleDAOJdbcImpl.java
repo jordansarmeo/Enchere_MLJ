@@ -20,9 +20,11 @@ import fr.eni.projet.enchere.mlj.dal.ConnectionProvider;
 
 public class ArticleDAOJdbcImpl implements ArticleDAO{
 	
-	private static final String INSERT= "INSERT INTO Articles_Vendus(nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial) values(?,?,?,?,?)";
+	private static final String INSERT= "INSERT INTO articles_vendus(nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial) values(?,?,?,?,?)";
 	private static final String SelectAll="SELECT no_article, nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, etatVente, lieuRetrait, Vendeur, categorieArticle" + "from ArticleVendu";
 	private static final String SelectByNom="SELECT  no_article, nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, etatVente, lieuRetrait, Vendeur, categorieArticle" +"where nom=?";
+	private static final String SelectById ="SELECT  no_article, nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, etatVente, lieuRetrait, Vendeur, categorieArticle" +"where id=?";
+	private static final String Encherir="update articles_vendus set prix_vente=? where no_article=?";
 	
 	public void insert(ArticleVendu art) throws BusinessException {
 		if(art==null)
@@ -112,6 +114,45 @@ public class ArticleDAOJdbcImpl implements ArticleDAO{
 		return art;
 	}
 
+	public ArticleVendu SelectById(int noArticle)throws BusinessException
+	{
+		ResultSet rs=null;
+		ArticleVendu art = null;
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			PreparedStatement pstmt = cnx.prepareStatement(SelectById);
+			pstmt.setInt(1, noArticle);
+			pstmt.executeUpdate();
+			
+			if (rs.next()) {
+				art= new ArticleVendu(rs.getInt("noArticle"), rs.getString("nomArticle"), rs.getString("description"), rs.getDate("dateDebutENcheres").toLocalDate(),
+						rs.getDate("DateFinEnchere").toLocalDate(), rs.getInt("misAPrix"), rs.getInt("prixVente"), rs.getString("etatVente"),  ((ArticleVendu) rs).getLieuRetrait(), ((ArticleVendu) rs).getVendeur(), ((ArticleVendu) rs).getCategorieArticle());
+			}
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			BusinessException businessException = new BusinessException();
+			businessException.ajouterErreur(CodesResultatDAL.SELECT_OBJET_ECHEC);
+		}	
+		return art;
+	}
+	public void encherir(ArticleVendu art) throws BusinessException 
+	{
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			PreparedStatement pstmt = cnx.prepareStatement(Encherir);
+			pstmt.setInt(1, art.getPrixVente());
+			
+			pstmt.executeUpdate();
+
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 	

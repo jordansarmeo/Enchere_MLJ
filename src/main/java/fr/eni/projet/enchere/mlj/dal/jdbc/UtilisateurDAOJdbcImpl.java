@@ -17,7 +17,7 @@ import fr.eni.projet.enchere.mlj.dal.UtilisateurDAO;
 
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 	
-	private static final String INSERT= "INSERT INTO UTILISATEUR(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe,) values(?,?,?,?,?,?,?,?,?)";
+	private static final String INSERT= "INSERT INTO UTILISATEURS(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe) values(?,?,?,?,?,?,?,?,?)";
 	private static final String SelectMonProfil="SELECT noUtilisateur, pseudo, nom, prenom, email,telephone, rue, code_postal, ville, mot_de_passe, credit" + "where pseudo=?";
 	private static final String SelectByPseudo="SELECT  noUtilisateur, pseudo, nom, prenom, email,telephone, rue, code_postal, ville" +"where pseudo=?";
 	private static final String UpDate = "update utilisateur set nom=?,prenom=?, telephone=?, rue =?, code_postal=? , ville=?, mot_de_passe=? where pseudo=?";

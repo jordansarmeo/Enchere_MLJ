@@ -36,6 +36,7 @@ public class ServletValidantUtilisateur extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		 String pseudo = null;
 		 String nom = null;
 		 String prenom = null;
@@ -64,6 +65,7 @@ public class ServletValidantUtilisateur extends HttpServlet {
 				
 						try {
 							new UtilisateurManager().ajouterUtilisateur(u);
+							
 						} catch (BusinessException e) {
 							e.printStackTrace();
 						}

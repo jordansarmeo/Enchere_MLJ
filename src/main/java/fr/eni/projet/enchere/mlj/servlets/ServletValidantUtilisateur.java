@@ -37,16 +37,19 @@ public class ServletValidantUtilisateur extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		 String pseudo = null;
-		 String nom = null;
-		 String prenom = null;
-		 String email = null;
+		 String pseudo ;
+		 String nom ;
+		 String prenom ;
+		 String email;
 		 int telephone = 0;
-		 String rue = null;
+		 String rue ;
 		 int codePostal = 0;
-		 String ville = null;
-		 String motDePasse = null;
-		 String confirmationMotDePasse = null;
+		 String ville ;
+		 String motDePasse ;
+		 String confirmationMotDePasse;
+
+
+			
 		 
 		 pseudo=request.getParameter("pseudo");
 		 nom=request.getParameter("nom");
@@ -61,14 +64,16 @@ public class ServletValidantUtilisateur extends HttpServlet {
 		confirmationMotDePasse=request.getParameter("confirmationMotDePasse");
 		  
 		
-				 Utilisateur u = new Utilisateur();
+		UtilisateurManager utilMan = new UtilisateurManager();
 				
-						try {
-							new UtilisateurManager().ajouterUtilisateur(u);
+			try {
+					Utilisateur u =  utilMan.ajouterUtilisateur(pseudo, nom, prenom,  email, telephone,  rue, codePostal, ville, motDePasse);
+					request.setAttribute("utilisateurs", u);
+
 							
-						} catch (BusinessException e) {
-							e.printStackTrace();
-						}
+				} catch (BusinessException e) {
+						e.printStackTrace();
+				}
 					
 			 getServletContext().getRequestDispatcher("/zonesecure").forward(request, response);
 			 //response.sendRedirect("/pageProfilUtilisateur.html");

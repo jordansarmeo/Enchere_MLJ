@@ -24,13 +24,12 @@
 <!-- ----------------------------------------------------------------------------------------------------- -->
 	
 	<%Object id =session.getAttribute("noUtilisateur");%>
-	<%=id%>
+	L'Id de la session est : <%=id%>
 	
     
 <!--      ------------------------------------------------------------------------------------------------ -->
 <% Utilisateur u = (Utilisateur) session.getAttribute( "utilisateur" ) ;	%>
-		 <%=u.getPseudo() %>
-		 <%=u.getMotDePasse() %>
+		 
 	<header>
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">

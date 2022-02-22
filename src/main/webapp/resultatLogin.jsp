@@ -1,3 +1,4 @@
+<%@page import="fr.eni.projet.enchere.mlj.bll.UtilisateurManager"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="fr.eni.projet.enchere.mlj.bo.*"%>
@@ -28,8 +29,9 @@
 	
     
 <!--      ------------------------------------------------------------------------------------------------ -->
+
 <% Utilisateur u = (Utilisateur) session.getAttribute( "utilisateur" ) ;	%>
-		 
+
 	<header>
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">

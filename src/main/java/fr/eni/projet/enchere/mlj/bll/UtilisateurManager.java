@@ -59,8 +59,7 @@ public class UtilisateurManager {
 	public Utilisateur ajouterUtilisateur(String pseudo, String nom, String prenom, String email, int telephone, String rue,
 			int codePostal, String ville, String motDePasse) throws BusinessException
 	{
-		Utilisateur u = new Utilisateur();
-		
+		Utilisateur u = new Utilisateur(pseudo,nom,prenom,email,telephone,rue,codePostal,ville,motDePasse);
 		if(u.getNoUtilisateur()!= null){
 			businessException.ajouterErreur(BLLException.INSERT_OBJET_ECHEC);
 		}

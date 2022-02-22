@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="fr.eni.projet.enchere.mlj.bo.*"%>
+      <%@ page import="fr.eni.projet.enchere.mlj.bll.*"%>
+        <%@ page import="fr.eni.projet.enchere.mlj.*"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +24,17 @@
 <title>Afficher Mon Profil</title>
 </head>
 <body>
-	<% Utilisateur u = (Utilisateur) request.getAttribute("psuedo"); %>
+	<% //Utilisateur u = (Utilisateur) request.getAttribute("psuedo");
+	String pseudo;
+		pseudo=request.getParameter("pseudo");
+		Utilisateur u = new Utilisateur();
+		try 
+		{
+			u= new UtilisateurManager().selectionnerMonProfil(pseudo);
+		} catch (BusinessException e) {
+			e.printStackTrace();
+		}
+		request.setAttribute("utilisateurs", u);%>
 <header>
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
@@ -37,48 +50,48 @@
 	   <tr>
 	      <th scope="row"></th>
 	      <td>Pseudo</td>
-	      <td>jojo44</td>
+	      <td><%=u.getPseudo()%></td>
 	    
 	    </tr>
 	    <tr>
 	      <th scope="row"></th>
 	      <td>Nom</td>
-	      <td> Dubois </td>
+	      <td><%=u.getNom() %></td>
 
 	    </tr>
 	    <tr>
 	      <th scope="row"></th>
 	      <td>Prénom</td>
-	      <td>Jordan</td>
+	      <td><%=u.getPrenom() %></td>
 
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Email</td>
-	      <td>duboi@gmail.com</td>
+	      <td><%=u.getEmail() %></td>
 	    
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Téléphone</td>
-	      <td>0769369852</td>
+	      <td><%=u.getTelephone() %></td>
 	   
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Rue</td>
-	       <td>Jean Moulin</td>
+	       <td><%=u.getRue() %></td>
 	 
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Code Postal</td>
-	      <td>69140</td>
+	      <td><%=u.getCodePostal() %></td>
 	   
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Ville</td>
-	      <td>Lyon</td>
+	      <td><%=u.getVille() %></td>
 	      
 	    </tr>
 	   

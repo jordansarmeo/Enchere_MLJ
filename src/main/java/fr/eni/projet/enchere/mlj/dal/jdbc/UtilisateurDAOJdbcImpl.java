@@ -18,8 +18,8 @@ import fr.eni.projet.enchere.mlj.dal.UtilisateurDAO;
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 	
 	private static final String INSERT= "INSERT INTO UTILISATEURS(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe,credit,administrateur) values(?,?,?,?,?,?,?,?,?,?,?)";
-	private static final String SelectMonProfil="SELECT noUtilisateur, pseudo, nom, prenom, email,telephone, rue, code_postal, ville, mot_de_passe, credit" + "where pseudo=?";
-	private static final String SelectByPseudo="SELECT  noUtilisateur, pseudo, nom, prenom, email,telephone, rue, code_postal, ville" +"where pseudo=?";
+	private static final String SelectMonProfil="SELECT pseudo, nom, prenom, email,telephone, rue, code_postal, ville, mot_de_passe" + "from utilisateurs where pseudo=?";
+	private static final String SelectByPseudo="SELECT  noUtilisateur, pseudo, nom, prenom, email,telephone, rue, code_postal, ville" +"from usilisateurs where pseudo=?";
 	private static final String UpDate = "update utilisateurs set nom=?,prenom=?, telephone=?, rue =?, code_postal=? , ville=?, mot_de_passe=? where pseudo=?";
 	private static final String Delete = "delete from Utilisateurs where noUtilisateur=?";
 	
@@ -65,20 +65,21 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 	}
 	
 	//afficher Mon profil
-	public Utilisateur SelectMonProfil(String pseudo) throws BusinessException
+	public Utilisateur SelectMonProfil(String identifiant) throws BusinessException
 	{
 		ResultSet rs = null;
-		Utilisateur u = null;
+		Utilisateur u = new Utilisateur();
 		try(Connection cnx = ConnectionProvider.getConnection())
 		{
 			PreparedStatement pstmt = cnx.prepareStatement(SelectMonProfil);
-			pstmt.setString(1, pseudo);
+			pstmt.setString(1, identifiant);
 			
 			rs = pstmt.executeQuery();
 			
+			
 			if(rs.next()) {
-				u= new Utilisateur(rs.getInt("noUtilisateur"), rs.getString("pseudo"), rs.getString("nom"), rs.getString("prenom"),rs.getString("email"), 
-						rs.getInt("telephone"), rs.getString("rue"), rs.getInt("codePostal"), rs.getString("ville"), rs.getString("motDePasse"), rs.getInt("credit"));
+				u= new Utilisateur(rs.getString("pseudo"), rs.getString("nom"), rs.getString("prenom"),rs.getString("email"), 
+						rs.getInt("telephone"), rs.getString("rue"), rs.getInt("code_postal"), rs.getString("ville"), rs.getString("mot_de_passe"));
 			}
 			
 		}catch(Exception e)
@@ -154,6 +155,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 		}
 	}
 
+	
 	
 	
 	

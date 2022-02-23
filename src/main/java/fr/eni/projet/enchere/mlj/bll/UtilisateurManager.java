@@ -96,6 +96,7 @@ public class UtilisateurManager {
 
 	
 	public Utilisateur selectionnerMonProfil(String pseudo) throws BusinessException{
+		
 		return this.utilisateurDao.SelectMonProfil(pseudo);
 	}
 	

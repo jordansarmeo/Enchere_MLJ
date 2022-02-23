@@ -3,7 +3,7 @@
     <%@ page import="fr.eni.projet.enchere.mlj.bo.*"%>
       <%@ page import="fr.eni.projet.enchere.mlj.bll.*"%>
         <%@ page import="fr.eni.projet.enchere.mlj.*"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,17 +24,44 @@
 <title>Afficher Mon Profil</title>
 </head>
 <body>
-	<% //Utilisateur u = (Utilisateur) request.getAttribute("psuedo");
-	String pseudo;
-		pseudo=request.getParameter("pseudo");
+	<%String pseudo=null;
+	
 		Utilisateur u = new Utilisateur();
-		try 
-		{
-			u= new UtilisateurManager().selectionnerMonProfil(pseudo);
+		
+			
+		pseudo = request.getParameter("pseudo");
+		
+		
+
+
+		try {
+			//Recherche des repas
+			UtilisateurManager utilManager = new UtilisateurManager();
+			Utilisateur utilisateur=null;
+			
+				utilisateur = utilManager.selectionnerMonProfil(pseudo);
+			
+			request.setAttribute("utilistaeurs", utilisateur);
 		} catch (BusinessException e) {
 			e.printStackTrace();
+			
 		}
-		request.setAttribute("utilisateurs", u);%>
+	
+//////////////////////////////////////////////////////////	
+	//String pseudo = null;
+	
+	
+	//Utilisateur u = (Utilisateur)request.getAttribute("pseudo");
+	
+	//String pseudo;
+	//Utilisateur u  = (Utilisateur)session.getAttribute("psuedo");
+	
+		//pseudo=request.getParameter("pseudo");
+		//Utilisateur u = new Utilisateur();
+		
+		//  new UtilisateurManager().selectionnerMonProfil(pseudo);
+		
+		//request.setAttribute("utilisateurs", u);%>
 <header>
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
@@ -97,6 +124,7 @@
 	   
 	  </tbody>
 	</table>
+	<%System.out.println("pseudo");%>
 
   <div class="form-group mb-0 text-center">
          <button class="btn btn-outline-success btn-block" type="submit" name="Modification"> Modification </button>

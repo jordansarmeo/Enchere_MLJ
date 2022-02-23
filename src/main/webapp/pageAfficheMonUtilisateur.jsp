@@ -26,7 +26,7 @@
 <body>
 	<%String pseudo=null;
 	
-		Utilisateur u = new Utilisateur();
+	Utilisateur u = (Utilisateur) session.getAttribute( "utilisateur" ) ;
 		
 			
 		pseudo = request.getParameter("pseudo");
@@ -41,7 +41,7 @@
 			
 				utilisateur = utilManager.selectionnerMonProfil(pseudo);
 			
-			request.setAttribute("utilistaeurs", utilisateur);
+			request.getAttribute("utilisateurs");
 		} catch (BusinessException e) {
 			e.printStackTrace();
 			
@@ -124,7 +124,7 @@
 	   
 	  </tbody>
 	</table>
-	<%System.out.println("pseudo");%>
+	
 
   <div class="form-group mb-0 text-center">
          <button class="btn btn-outline-success btn-block" type="submit" name="Modification"> Modification </button>

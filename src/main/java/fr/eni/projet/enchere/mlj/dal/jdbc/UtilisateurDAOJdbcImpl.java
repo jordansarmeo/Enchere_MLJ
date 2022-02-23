@@ -19,7 +19,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 	
 	private static final String INSERT= "INSERT INTO UTILISATEURS(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe,credit,administrateur) values(?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String SelectMonProfil="SELECT pseudo, nom, prenom, email,telephone, rue, code_postal, ville, mot_de_passe from utilisateurs where pseudo=?";
-	private static final String SelectByPseudo="SELECT  noUtilisateur, pseudo, nom, prenom, email,telephone, rue, code_postal, ville" +"from usilisateurs where pseudo=?";
+	private static final String SelectByPseudo="SELECT  noUtilisateur, pseudo, nom, prenom, email,telephone, rue, code_postal, ville from usilisateurs where pseudo=?";
 	private static final String UpDate = "update utilisateurs set nom=?,prenom=?, telephone=?, rue =?, code_postal=? , ville=?, mot_de_passe=? where pseudo=?";
 	private static final String Delete = "delete from Utilisateurs where noUtilisateur=?";
 	

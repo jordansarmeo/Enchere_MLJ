@@ -39,7 +39,15 @@ public class zonesecure extends HttpServlet {
     	session.setAttribute("noUtilisateur",s);
     	 
     	String pseudo = request.getParameter("pseudo");
+    	String nom = request.getParameter("nom");
+    	String prenom = request.getParameter("prenom");
+      	String email = request.getParameter("email");
+      	int telephone = Integer.parseInt(request.getParameter("telephone"));
+      	String rue = request.getParameter("rue");
+      	int codePostal = Integer.parseInt(request.getParameter("codePostal"));
+      	String ville = request.getParameter("ville");
     	String motDePasse = request.getParameter("motDePasse");
+    	
     	
     	
     	
@@ -50,15 +58,14 @@ public class zonesecure extends HttpServlet {
 		
     	if(session.getAttribute("motDePasse") != null)
 		{
-			pseudo=(String)session.getAttribute("motDePasse");
+			motDePasse=(String)session.getAttribute("motDePasse");
 		}
-		
 		
 		
     	
     	// Etape 2 : Soumettre les paramètres de la requête à la couche service et récupérer résultat
     	
-    	Utilisateur user = new Utilisateur(pseudo, motDePasse);	
+    	Utilisateur user = new Utilisateur(pseudo,nom,prenom,email,telephone,rue,codePostal,ville, motDePasse);	
     	//HttpSession maSession = request.getSession();		
     	session.setAttribute("utilisateur", user);
     	

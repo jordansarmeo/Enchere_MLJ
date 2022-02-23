@@ -24,13 +24,12 @@
 <body>
 <!-- ----------------------------------------------------------------------------------------------------- -->
 	
-	<%Object id =session.getAttribute("noUtilisateur");%>
-	L'Id de la session est : <%=id%>
+	<%String userName =(String)session.getAttribute("userName");  %>
 	
     
 <!--      ------------------------------------------------------------------------------------------------ -->
 
-<% Utilisateur u = (Utilisateur) session.getAttribute( "utilisateur" ) ;	%>
+
 
 	<header>
       <nav class="navbar navbar-light bg-light">
@@ -48,7 +47,7 @@
      <!--content start-->
 	
     <h2 class="text-center">Liste des Enchères</h2>
-    <h3 class="text-center">Bonjour <%=u.getPseudo() %></h3>
+    <h3 class="text-center">Bonjour <%=userName %></h3>
     <div class="container">
       <div class="row">
         <div class="col-md-5">

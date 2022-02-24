@@ -25,11 +25,19 @@
 <body>
 <% Utilisateur u = (Utilisateur) request.getAttribute("psuedo"); %>
 <header>
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand">ENI-Enchères</a>
-            </div>
-        </nav>
+        <header>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a href="index.html" class="navbar-brand">ENI-Enchères</a>
+          <div class="d-flex">
+            <a class="p-2" href="listeEnchereMesVentes.jsp">Enchères</a>
+            <a class="p-2" href="nouvelleVente.jsp">Vendre un article</a>
+            <a class="p-2" href="ServletListerUtilisateur">Mon profil</a>
+            <a class="p-2" href="LogoutServlet">Déconnexion</a>
+          </div>
+        </div>
+      </nav>
+    </header>
   <div class="text-aling">    
 	   <table class="table table-borderless">
 	  

@@ -34,10 +34,10 @@
 	<header>
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <a href="connexion.html" class="navbar-brand">ENI-Enchères</a>
+          <a href="index.html" class="navbar-brand">ENI-Enchères</a>
           <div class="d-flex">
             <a class="p-2" href="listeEnchereMesVentes.jsp">Enchères</a>
-            <a class="p-2" href="nouvelleVente.html">Vendre un article</a>
+            <a class="p-2" href="nouvelleVente.jsp">Vendre un article</a>
             <a class="p-2" href="ServletListerUtilisateur">Mon profil</a>
             <a class="p-2" href="LogoutServlet">Déconnexion</a>
           </div>
@@ -47,7 +47,7 @@
      <!--content start-->
 	
     <h2 class="text-center">Liste des Enchères</h2>
-    <h3 class="text-center">Bonjour <%=userName %></h3>
+    <h3 class="text-center"> <%=userName %></h3>
     <div class="container">
       <div class="row">
         <div class="col-md-5">

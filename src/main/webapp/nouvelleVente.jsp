@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -26,25 +29,28 @@
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"
     ></script>
-    <title>Page Nouveau Achat</title>
+    <title>Page Nouvelle Vente</title>
   </head>
   <body>
+  	<%String userName =(String)session.getAttribute("userName");  %>
     <header>
-        <nav class="navbar navbar-light bg-light">
-          <div class="container-fluid">
-            <a class="navbar-brand">ENI-Enchères</a>
-            <div class="d-flex">
-              <a class="p-2" href="">Enchères</a>
-              <a class="p-2" href="">Vendre un article</a>
-              <a class="p-2" href="">Mon profil</a>
-              <a class="p-2" href="">Déconnexion</a>
-            </div>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a href="index.html" class="navbar-brand">ENI-Enchères</a>
+          <div class="d-flex">
+            <a class="p-2" href="listeEnchereMesVentes.jsp">Enchères</a>
+            <a class="p-2" href="nouvelleVente.jsp">Vendre un article</a>
+            <a class="p-2" href="ServletListerUtilisateur">Mon profil</a>
+            <a class="p-2" href="LogoutServlet">Déconnexion</a>
           </div>
-        </nav>
-      </header>
+        </div>
+      </nav>
+    </header>
     <!--content start-->
 
-    <h1 class="text-center">Nouveau achat</h1>
+    <h1 class="text-center">Nouvelle Vente</h1>
+    <p class="text-center">vous étes connecté sous le pseudo : <%=userName %></p>
+    
     <div class="container mt-3">
       <form action="ServletValidantAjoutArticle" method="post">  
         <div class="row">

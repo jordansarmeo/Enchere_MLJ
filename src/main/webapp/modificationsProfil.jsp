@@ -65,31 +65,31 @@ Utilisateur u = (Utilisateur) session.getAttribute( "utilisateur" ) ;
                     <div class="row mb-3">
                         <label for="pseudo" class="col-sm-3 col-form-label">Pseudo</label>
                         <div class="col-sm-9">
-                        <input type="text" class="form-control"id="pseudo" name="pseudo" placeholder="<%=u.getPseudo()%>">
+                        <input type="text" class="form-control"id="pseudo" name="pseudo" value="<%=u.getPseudo()%>" >
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="prenom" class="col-sm-3 col-form-label">Prénom</label>
                         <div class="col-sm-9">
-                        <input type="text" class="form-control"id="prenom" name="prenom" placeholder="<%=u.getPrenom()%>">
+                        <input type="text" class="form-control"id="prenom" name="prenom" value="<%=u.getPrenom()%>">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="telephone" class="col-sm-3 col-form-label">Téléphone</label>
                         <div class="col-sm-9">
-                        <input type="text" class="form-control"id="telephone" name="telephone" placeholder="<%=u.getTelephone()%>">
+                        <input type="text" class="form-control"id="telephone" name="telephone" value="<%=u.getTelephone()%>">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="codePostal" class="col-sm-3 col-form-label">Code Postal</label>
                         <div class="col-sm-9">
-                        <input type="text" class="form-control"id="codePostal" name="codePostal" placeholder="<%=u.getCodePostal()%>">
+                        <input type="text" class="form-control"id="codePostal" name="codePostal" value="<%=u.getCodePostal()%>">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="motDePasse" class="col-sm-4 col-form-label">Mot de passe Actuel</label>
                         <div class="col-sm-8">
-                        <input type="password" class="form-control"id="motDePasse" name="motDePasse" placeholder="<%=u.getMotDePasse()%>">
+                        <input type="password" class="form-control"id="motDePasse" name="motDePasse" value="<%=u.getMotDePasse()%>">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -103,25 +103,25 @@ Utilisateur u = (Utilisateur) session.getAttribute( "utilisateur" ) ;
                     <div class="row mb-3">
                         <label for="nom" class="col-sm-3 col-form-label">Nom</label>
                         <div class="col-sm-9">
-                        <input type="text" class="form-control"id="nom" name="nom" placeholder="<%=u.getNom()%>">
+                        <input type="text" class="form-control"id="nom" name="nom" value="<%=u.getNom()%>">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="email" class="col-sm-3 col-form-label">Email</label>
                         <div class="col-sm-9">
-                        <input type="email" class="form-control"id="email" name="email" placeholder="<%=u.getEmail()%>">
+                        <input type="email" class="form-control"id="email" name="email" value="<%=u.getEmail()%>">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="rue" class="col-sm-3 col-form-label">Rue</label>
                         <div class="col-sm-9">
-                        <input type="text" class="form-control"id="rue" name="rue" placeholder="<%=u.getRue()%>">
+                        <input type="text" class="form-control"id="rue" name="rue" value="<%=u.getRue()%>">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="ville" class="col-sm-3 col-form-label">Ville</label>
                         <div class="col-sm-9">
-                        <input type="text" class="form-control"id="ville" name="ville" placeholder="<%=u.getVille()%>">
+                        <input type="text" class="form-control"id="ville" name="ville" value="<%=u.getVille()%>">
                         </div>
                     </div>
                     <div class="row mb-3 hide">

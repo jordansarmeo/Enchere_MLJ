@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import fr.eni.projet.enchere.mlj.BusinessException;
 import fr.eni.projet.enchere.mlj.bll.UtilisateurManager;
@@ -28,11 +28,13 @@ public class ServletListerUtilisateur extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pseudo;
-		pseudo=request.getParameter("pseudo");
+		HttpSession session = request.getSession(); 
+		String userName =(String)session.getAttribute("userName"); 
+		
 		Utilisateur u = new Utilisateur();
 		try 
 		{
-			u= new UtilisateurManager().selectionnerMonProfil(pseudo);
+			u= new UtilisateurManager().selectionnerMonProfil(userName);
 			request.setAttribute("utilisateurs", u);
 			getServletContext().getRequestDispatcher("/pageAfficheMonUtilisateur.jsp").forward(request, response);
 		

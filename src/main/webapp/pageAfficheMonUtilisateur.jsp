@@ -25,46 +25,13 @@
 </head>
 <body>
 	
-	<%/* String pseudo=null;
-	
-	Utilisateur u = (Utilisateur) session.getAttribute( "utilisateur" ) ;
-		
-			
-		pseudo = request.getParameter("pseudo");
-		System.out.println(pseudo);
-		
-
-
-		try {
-			
-			UtilisateurManager utilManager = new UtilisateurManager();
-			Utilisateur utilisateur=null;
-			
-				utilisateur = utilManager.selectionnerMonProfil(pseudo);
-			
-			request.getAttribute("utilisateurs");
-		} catch (BusinessException e) {
-			e.printStackTrace();
-			
-		} */
+	<%
+		String userName =(String)session.getAttribute("userName");  
 		Utilisateur u;
-		u=(Utilisateur)request.getAttribute("utilisateurs");
+		u=(Utilisateur)request.getAttribute("utilisateurs"); %>
 	
-//////////////////////////////////////////////////////////	
-	//String pseudo = null;
-	
-	
-	//Utilisateur u = (Utilisateur)request.getAttribute("pseudo");
-	
-	//String pseudo;
-	//Utilisateur u  = (Utilisateur)session.getAttribute("psuedo");
-	
-		//pseudo=request.getParameter("pseudo");
-		//Utilisateur u = new Utilisateur();
+
 		
-		//  new UtilisateurManager().selectionnerMonProfil(pseudo);
-		
-		//request.setAttribute("utilisateurs", u);%>
 <header>
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">

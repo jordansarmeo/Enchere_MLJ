@@ -31,7 +31,6 @@
 		u=(Utilisateur)request.getAttribute("utilisateurs"); %>
 	
 
-		
 <header>
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
@@ -40,7 +39,7 @@
         </nav>
 </header>
   <div class="text-aling"> 
-  <form action="modificationsProfil.html">  
+  <form action="ServletListerModifUtilisateur">  
 	   <table class="table table-borderless">
 	  
 	  <tbody>

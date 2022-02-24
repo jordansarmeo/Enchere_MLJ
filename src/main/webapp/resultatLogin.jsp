@@ -147,15 +147,14 @@
           <div class="card mb-3" style="max-width: 540px">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="..." />
+                 <img src="img/pc_gamer_travail.png" class="img-fluid rounded-start">
               </div>
               <div class="col-md-8">
+           	 
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title">PC Gamer pour travailler</h5>
                   <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
+                    Prix: 210 points</p><p>Fin de l'enchère: 10/08/2022</p><p>Vendeur: jojo44
                   </p>
                   <p class="card-text">
                     <small class="text-muted">Last updated 3 mins ago</small>
@@ -169,15 +168,14 @@
           <div class="card mb-3" style="max-width: 540px">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="..." />
+                <img src="img/rechaud.png" class="img-fluid rounded-start">
               </div>
               <div class="col-md-8">
+            	 
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title">Rocket stove pour riz et pâtes</h5>
                   <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
+                   Prix: 185 points</p><p>Fin de l'enchère: 20/09/2022</p><p>Vendeur: NineJea
                   </p>
                   <p class="card-text">
                     <small class="text-muted">Last updated 3 mins ago</small>

@@ -138,7 +138,8 @@
           <div class="card mb-3" style="max-width: 540px">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="img/rechaud.png" class="img-fluid rounded-start">
+               <button type="button" ><a href="PageEncherir2.html">
+                <img src="img/rechaud.png" class="img-fluid rounded-start"></a>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -149,6 +150,7 @@
                   <p class="card-text">
                     <small class="text-muted">Last updated 3 mins ago</small>
                   </p>
+                  </button>
                 </div>
               </div>
             </div>

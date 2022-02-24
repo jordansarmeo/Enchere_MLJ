@@ -41,7 +41,6 @@ public class zonesecure extends HttpServlet {
  
     	//get parameters from request object.
     	String userName = request.getParameter("pseudo").trim();
-    	System.out.println("coucou");
     	String password = request.getParameter("motDePasse").trim();
  
     	//check for null and empty values.
@@ -51,7 +50,8 @@ public class zonesecure extends HttpServlet {
     		RequestDispatcher requestDispatcher = 
     			request.getRequestDispatcher("/login.html");
     		requestDispatcher.include(request, response);
-    	}//Check for valid username and password.
+    	}
+    	//Check for valid username and password.
     	else if(userName.equals(userName) && password.equals(password)){
     		HttpSession session=request.getSession();  
                 session.setAttribute("userName",userName);  

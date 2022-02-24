@@ -21,6 +21,7 @@
     <title>Liste de Mes Ventes</title>
   </head>
   <body>
+  	<%String userName =(String)session.getAttribute("userName");  %>
     <header>
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -37,6 +38,7 @@
     <!--content start-->
 
     <h2 class="text-center">Liste de mes ventes</h2>
+    <h4 class="text-center">Bonjour <%=userName %></h4>
     <div class="container">
       <div class="row">
         <div class="col-md-5">

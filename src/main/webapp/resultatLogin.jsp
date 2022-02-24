@@ -38,7 +38,7 @@
           <div class="d-flex">
             <a class="p-2" href="listeEnchereMesVentes.jsp">Enchères</a>
             <a class="p-2" href="nouvelleVente.html">Vendre un article</a>
-            <a class="p-2" href="/ServletListerUtilisateur">Mon profil</a>
+            <a class="p-2" href="ServletListerUtilisateur">Mon profil</a>
             <a class="p-2" href="LogoutServlet">Déconnexion</a>
           </div>
         </div>

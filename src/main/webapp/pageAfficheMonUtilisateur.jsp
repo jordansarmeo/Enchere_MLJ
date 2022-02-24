@@ -25,7 +25,7 @@
 </head>
 <body>
 	
-	<%String pseudo=null;
+	<%/* String pseudo=null;
 	
 	Utilisateur u = (Utilisateur) session.getAttribute( "utilisateur" ) ;
 		
@@ -46,7 +46,9 @@
 		} catch (BusinessException e) {
 			e.printStackTrace();
 			
-		}
+		} */
+		Utilisateur u;
+		u=(Utilisateur)request.getAttribute("utilisateurs");
 	
 //////////////////////////////////////////////////////////	
 	//String pseudo = null;
@@ -78,48 +80,48 @@
 	   <tr>
 	      <th scope="row"></th>
 	      <td>Pseudo</td>
-	      <td></td>
+	      <td><%=u.getPseudo()%></td>
 	    
 	    </tr>
 	    <tr>
 	      <th scope="row"></th>
 	      <td>Nom</td>
-	      <td></td>
+	      <td><%=u.getNom()%></td>
 
 	    </tr>
 	    <tr>
 	      <th scope="row"></th>
 	      <td>Prénom</td>
-	      <td></td>
+	      <td><%=u.getPrenom()%></td>
 
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Email</td>
-	      <td></td>
+	      <td><%=u.getEmail()%></td>
 	    
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Téléphone</td>
-	      <td></td>
+	      <td><%=u.getTelephone()%></td>
 	   
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Rue</td>
-	       <td></td>
+	       <td><%=u.getRue()%></td>
 	 
 	    </tr>
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Code Postal</td>
-	      <td></td>
+	      <td><%=u.getCodePostal()%></td>
 	   
 	     <tr>
 	      <th scope="row"></th>
 	      <td>Ville</td>
-	      <td></td>
+	      <td><%=u.getVille()%></td>
 	      
 	    </tr>
 	   

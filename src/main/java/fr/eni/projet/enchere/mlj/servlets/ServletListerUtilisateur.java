@@ -28,7 +28,7 @@ public class ServletListerUtilisateur extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pseudo;
-		pseudo=request.getParameter("userName");
+		pseudo=request.getParameter("pseudo");
 		Utilisateur u = new Utilisateur();
 		try 
 		{

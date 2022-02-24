@@ -36,10 +36,10 @@
         <div class="container-fluid">
           <a href="connexion.html" class="navbar-brand">ENI-Enchères</a>
           <div class="d-flex">
-            <a class="p-2" href="">Enchères</a>
+            <a class="p-2" href="listeEnchereMesVentes.html">Enchères</a>
             <a class="p-2" href="nouvelleVente.html">Vendre un article</a>
             <a class="p-2" href="pageAfficheMonUtilisateur.jsp">Mon profil</a>
-            <a class="p-2" href="index.html">Déconnexion</a>
+            <a class="p-2" href="LogoutServlet">Déconnexion</a>
           </div>
         </div>
       </nav>

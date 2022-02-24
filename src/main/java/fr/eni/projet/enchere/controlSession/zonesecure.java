@@ -41,18 +41,18 @@ public class zonesecure extends HttpServlet {
  
     	//get parameters from request object.
     	String userName = request.getParameter("pseudo").trim();
+    	System.out.println("coucou");
     	String password = request.getParameter("motDePasse").trim();
  
     	//check for null and empty values.
-    	if(userName == null || userName.equals("") || 
-    			password == null || password.equals("")){
+    	if(userName == null || password == null ){
     		out.print("Please enter both username " +
     				"and password. <br/><br/>");
     		RequestDispatcher requestDispatcher = 
     			request.getRequestDispatcher("/login.html");
     		requestDispatcher.include(request, response);
     	}//Check for valid username and password.
-    	else if(userName.equals("admin") && password.equals("123")){
+    	else if(userName.equals(userName) && password.equals(password)){
     		HttpSession session=request.getSession();  
                 session.setAttribute("userName",userName);  
                 session.setAttribute("password",password);

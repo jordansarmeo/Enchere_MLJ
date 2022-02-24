@@ -24,6 +24,7 @@
 <title>Afficher Mon Profil</title>
 </head>
 <body>
+
 	<%String pseudo=null;
 	
 	Utilisateur u = (Utilisateur) session.getAttribute( "utilisateur" ) ;

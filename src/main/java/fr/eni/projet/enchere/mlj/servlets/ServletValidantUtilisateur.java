@@ -62,9 +62,10 @@ public class ServletValidantUtilisateur extends HttpServlet {
 		
 		 motDePasse=request.getParameter("motDePasse");
 		confirmationMotDePasse=request.getParameter("confirmationMotDePasse");
+		  String regex = "^[a-zA-Z0-9]+$";
 		  
-		
-		UtilisateurManager utilMan = new UtilisateurManager();
+		if (pseudo.matches(regex) && motDePasse.equals(confirmationMotDePasse)) {
+			UtilisateurManager utilMan = new UtilisateurManager();
 				
 			try {
 					Utilisateur u =  utilMan.ajouterUtilisateur(pseudo, nom, prenom,  email, telephone,  rue, codePostal, ville, motDePasse);
@@ -77,7 +78,12 @@ public class ServletValidantUtilisateur extends HttpServlet {
 					
 			 getServletContext().getRequestDispatcher("/zonesecure").forward(request, response);
 			 //response.sendRedirect("/pageProfilUtilisateur.html");
-		
+			}else {
+				getServletContext().getRequestDispatcher("/pageProfilUtilisateur.html").forward(request, response);
 			}
+			
+			
+			
+		}
 	
 }

@@ -155,7 +155,7 @@
                 <div class="card-body">
                   <h5 class="card-title">PC Gamer pour travailler</h5>
                   <p class="card-text">
-                    Prix: 210 points</p><p>Fin de l'enchère: 10/08/2022</p><p>Vendeur: jojo44
+                    Prix: 210 points</p><p>Fin de l'enchère: 10/08/2022</p><p>Vendeur: <a href="pageAfficheAutreUtilisateur.jsp">jojo44</a>
                   </p>
                   <p class="card-text">
                     <small class="text-muted">Last updated 3 mins ago</small>
@@ -179,7 +179,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Rocket stove pour riz et pâtes</h5>
                   <p class="card-text">
-                   Prix: 185 points</p><p>Fin de l'enchère: 20/09/2022</p><p>Vendeur: NineJea
+                   Prix: 185 points</p><p>Fin de l'enchère: 20/09/2022</p><p>Vendeur: <a href="pageAfficheAutreUtilisateur.jsp">NineJea</a>
                   </p>
                   <p class="card-text">
                     <small class="text-muted">Last updated 3 mins ago</small>

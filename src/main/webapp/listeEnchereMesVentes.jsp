@@ -150,7 +150,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title"></h5>
+                  <h5 class="card-title">Rocket stove pour riz et pâtes</h5>
                   <p class="card-text">
                  Prix: 185 points</p><p>Fin de l'enchère: 20/09/2022</p><p>Vendeur: NineJea
                   </p>

@@ -29,10 +29,10 @@
         <div class="container-fluid">
           <a href="index.html" class="navbar-brand">ENI-Enchères</a>
           <div class="d-flex">
-            <a class="p-2" href="nouveauAchat.html">Enchères</a>
-            <a class="p-2" href="nouvelleVente.jsp">Vendre un article</a>
-            <a class="p-2" href="ServletListerUtilisateur">Mon profil</a>
-            <a class="p-2" href="LogoutServlet">Déconnexion</a>
+            <a class="p-2 mx-2 btn btn-outline-info" href="nouveauAchat.html">Enchères</a>
+            <a class="p-2 mx-2 btn btn-outline-info " href="nouvelleVente.jsp">Vendre un article</a>
+            <a class="p-2 mx-2 btn btn-outline-info" href="ServletListerUtilisateur">Mon profil</a>
+            <a class="p-2 mx-2 btn btn-outline-info" href="LogoutServlet">Déconnexion</a>
           </div>
         </div>
       </nav>

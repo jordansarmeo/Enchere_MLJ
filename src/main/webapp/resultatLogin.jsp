@@ -21,7 +21,7 @@
     ></script>
 <title>Utilisateur Connecté</title>
 </head>
-<body>
+<body class="bg-light">
 <!-- ----------------------------------------------------------------------------------------------------- -->
 	
 	<%String userName =(String)session.getAttribute("userName");  %>

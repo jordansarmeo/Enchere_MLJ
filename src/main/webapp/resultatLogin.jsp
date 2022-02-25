@@ -1,6 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="fr.eni.projet.enchere.mlj.bll.UtilisateurManager"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <%@ page import="fr.eni.projet.enchere.mlj.bo.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//FR" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,7 +20,7 @@
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"
     ></script>
-<title>Utilisateur Connecté</title>
+<title>Utilisateur ConnectÃ©</title>
 </head>
 <body class="bg-light">
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -34,19 +35,19 @@
 	<header>
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <a href="index.html" class="navbar-brand">ENI-Enchères</a>
+          <a href="index.html" class="navbar-brand">ENI-EnchÃ¨res</a>
           <div class="d-flex">
-            <a class="p-2 mx-2 btn btn-outline-info" href="nouveauAchat.html">Enchères</a>
+            <a class="p-2 mx-2 btn btn-outline-info" href="nouveauAchat.html">EnchÃ¨res</a>
             <a class="p-2 mx-2 btn btn-outline-info " href="nouvelleVente.jsp">Vendre un article</a>
             <a class="p-2 mx-2 btn btn-outline-info" href="ServletListerUtilisateur">Mon profil</a>
-            <a class="p-2 mx-2 btn btn-outline-info" href="LogoutServlet">Déconnexion</a>
+            <a class="p-2 mx-2 btn btn-outline-info" href="LogoutServlet">DÃ©connexion</a>
           </div>
         </div>
       </nav>
     </header>
      <!--content start-->
 	
-    <h2 class="text-center">Liste des Enchères</h2>
+    <h2 class="text-center">Liste des EnchÃ¨res</h2>
     <h4 class="text-center">Bonjour <%=userName %></h4>
     <div class="container">
       <div class="row">
@@ -81,7 +82,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Catégories
+              CatÃ©gories
             </button>
             <ul
               class="dropdown-menu dropdown-menu-dark"
@@ -89,7 +90,7 @@
             >
               <li><a class="dropdown-item active" href="#">Informatique</a></li>
               <li><a class="dropdown-item" href="#">Ameublement</a></li>
-              <li><a class="dropdown-item" href="#">Vêtements </a></li>
+              <li><a class="dropdown-item" href="#">VÃªtements </a></li>
               <li><a class="dropdown-item" href="#">Sport&Loisir</a></li>
             </ul>
           </div>
@@ -103,15 +104,15 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">enchéres ouvertes </label>
+                    <label class="form-check-label" for="defaultCheck1">enchÃ©res ouvertes </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                    <label class="form-check-label" for="defaultCheck1">mes enchéres en cours </label>
+                    <label class="form-check-label" for="defaultCheck1">mes enchÃ©res en cours </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-                    <label class="form-check-label" for="defaultCheck1">mes enchéres remportées </label>
+                    <label class="form-check-label" for="defaultCheck1">mes enchÃ©res remportÃ©es </label>
                 </div>
             </div>
               <div class="col-4">
@@ -125,11 +126,11 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                    <label class="form-check-label" for="defaultCheck1">ventes non débutées </label>
+                    <label class="form-check-label" for="defaultCheck1">ventes non dÃ©butÃ©es </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-                    <label class="form-check-label" for="defaultCheck1">ventes terminées </label>
+                    <label class="form-check-label" for="defaultCheck1">ventes terminÃ©es </label>
                 </div>
               </div>
               <div class="col-4 text-end">
@@ -155,7 +156,7 @@
                 <div class="card-body">
                   <h5 class="card-title">PC Gamer pour travailler</h5>
                   <p class="card-text">
-                    Prix: 210 points</p><p>Fin de l'enchère: 10/08/2022</p><p>Vendeur: <a href="pageAfficheAutreUtilisateur.jsp">jojo44</a>
+                    Prix: 210 points</p><p>Fin de l'enchÃ¨re: 10/08/2022</p><p>Vendeur: <a href="pageAfficheAutreUtilisateur.jsp">jojo44</a>
                   </p>
                   <p class="card-text">
                     <small class="text-muted">Last updated 3 mins ago</small>
@@ -177,9 +178,9 @@
               <div class="col-md-8">
             	 
                 <div class="card-body">
-                  <h5 class="card-title">Rocket stove pour riz et pâtes</h5>
+                  <h5 class="card-title">Rocket stove pour riz et pÃ¢tes</h5>
                   <p class="card-text">
-                   Prix: 185 points</p><p>Fin de l'enchère: 20/09/2022</p><p>Vendeur: <a href="pageAfficheAutreUtilisateur.jsp">NineJea</a>
+                   Prix: 185 points</p><p>Fin de l'enchÃ¨re: 20/09/2022</p><p>Vendeur: <a href="pageAfficheAutreUtilisateur.jsp">NineJea</a>
                   </p>
                   <p class="card-text">
                     <small class="text-muted">Last updated 3 mins ago</small>

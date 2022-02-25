@@ -116,11 +116,11 @@
             </div>
               <div class="col-4">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked/>
                         <label class="form-check-label" for="inlineRadio1">Mes ventes</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
                     <label class="form-check-label" for="defaultCheck1">mes ventes en cours </label>
                 </div>
                 <div class="form-check">
@@ -133,7 +133,7 @@
                 </div>
               </div>
               <div class="col-4 text-end">
-                <button type="button" class="btn btn-primary btn-lg">Rechercher</button>
+                <a class="btn btn-primary btn-lg" href="listeEnchereMesVentes.jsp" role="button">Rechercher</a>
               </div>
           </div>
           

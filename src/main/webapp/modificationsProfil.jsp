@@ -61,7 +61,7 @@ Utilisateur u = (Utilisateur) session.getAttribute( "utilisateur" ) ;
     <div class="container mt-5">
         <form action="<%=request.getContextPath()%>/ServletValidantModificationUtilisateur" method="post">
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 bg-light p-4">
                     <div class="row mb-3">
                         <label for="pseudo" class="col-sm-3 col-form-label">Pseudo</label>
                         <div class="col-sm-9">
@@ -99,7 +99,7 @@ Utilisateur u = (Utilisateur) session.getAttribute( "utilisateur" ) ;
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 bg-light p-4">
                     <div class="row mb-3">
                         <label for="nom" class="col-sm-3 col-form-label">Nom</label>
                         <div class="col-sm-9">

@@ -20,10 +20,10 @@ import fr.eni.projet.enchere.mlj.dal.ConnectionProvider;
 
 public class ArticleDAOJdbcImpl implements ArticleDAO{
 	
-	private static final String INSERT= "INSERT INTO articles_vendus(nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial) values(?,?,?,?,?)";
-	private static final String SelectAll="SELECT no_article, nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, etatVente, lieuRetrait, Vendeur, categorieArticle" + "from ArticleVendu";
-	private static final String SelectByNom="SELECT  no_article, nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, etatVente, lieuRetrait, Vendeur, categorieArticle" +"where nom=?";
-	private static final String SelectById ="SELECT  no_article, nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, etatVente, lieuRetrait, Vendeur, categorieArticle" +"where id=?";
+	private static final String INSERT= "INSERT INTO articles_vendus(nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, no_utilisateur, no_categorie) values(?,?,?,?,?,?,?)";
+	private static final String SelectAll="SELECT no_article, nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial,no_utilisateur, no_categorie from articles_vendus";
+	private static final String SelectByNom="SELECT  no_article, nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial, no_categorie from articles_vendus where nom=?";
+	private static final String SelectById ="SELECT  no_article, nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial,  Vendeur, no_categorie from articles_vendus where id=?";
 	private static final String Encherir="update articles_vendus set prix_vente=? where no_article=?";
 	
 	public void insert(ArticleVendu art) throws BusinessException {
@@ -42,8 +42,9 @@ public class ArticleDAOJdbcImpl implements ArticleDAO{
 			pstmt.setDate(3, java.sql.Date.valueOf(art.getDateDebutEncheres()));
 			pstmt.setDate(4, java.sql.Date.valueOf(art.getDateFinEncheres()));
 			pstmt.setInt(5, art.getMisAPrix());
-			((ArticleVendu) pstmt).setLieuRetrait(art.getLieuRetrait());
-			((ArticleVendu) pstmt).setCategorieArticle(art.getCategorieArticle());
+			pstmt.setInt(6 , ((ArticleVendu) art).getVendeur());
+			pstmt.setInt(7, art.getCategorieArticle());
+			
 			
 			
 			pstmt.executeUpdate();
@@ -65,7 +66,7 @@ public class ArticleDAOJdbcImpl implements ArticleDAO{
 
 
 	public List<ArticleVendu> selectAll() throws BusinessException
-	{
+	{ System.out.println("coucou");
 		List<ArticleVendu> liste=new ArrayList<>();
 		ResultSet rs=null;
 		ArticleVendu art = null;

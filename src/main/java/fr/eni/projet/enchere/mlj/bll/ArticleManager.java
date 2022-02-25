@@ -1,12 +1,13 @@
 package fr.eni.projet.enchere.mlj.bll;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 
 import fr.eni.projet.enchere.mlj.BusinessException;
 import fr.eni.projet.enchere.mlj.bo.ArticleVendu;
-import fr.eni.projet.enchere.mlj.bo.Utilisateur;
 import fr.eni.projet.enchere.mlj.dal.ArticleDAO;
 import fr.eni.projet.enchere.mlj.dal.DAOFactory;
 
@@ -20,46 +21,24 @@ public class ArticleManager {
 
 	BusinessException businessException = new BusinessException();
 	
-	public ArticleVendu ajoutArticle(ArticleVendu a) throws BusinessException
-	{	boolean valide = true;
+	public ArticleVendu ajoutArticle(String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres, int misAPrix, int vendeur, int categorieArticle) throws BusinessException
+	{	
+		this.validerDate(dateDebutEncheres,dateFinEncheres, businessException);
+		ArticleVendu a = new ArticleVendu(nomArticle, description, dateDebutEncheres, dateFinEncheres, misAPrix, vendeur, categorieArticle);
 		
-		if(valide = true)
-		{
-			if(a==null){
-				businessException.ajouterErreur(BLLException.OBJET_NULL);
-			}
-			if(a.getNomArticle()==null || a.getNomArticle().trim().length()==0){
-				valide = false; 
-			}
-			if(a.getDescription()==null || a.getDescription().trim().length()==0){
-				valide = false;
-			}
-			if(a.getDateDebutEncheres()==null){
-				valide = false;
-			}
-			if(a.getDateFinEncheres()==null){
-				valide = false;
-			}
-			if(a.getMisAPrix()==0 || a.getMisAPrix()<0){
-				valide = false;
-			}
-			if(a.getLieuRetrait()==null){
-				valide = false;
-			}
-			if(a.getCategorieArticle()==null){
-				valide = false;
-			}
-			
-			if(a.getNoArticle()!= null){
-				businessException.ajouterErreur(BLLException.INSERT_OBJET_ECHEC);
-			}
+			a.getNomArticle();
+			a.getDescription();
+			a.getDateDebutEncheres();
+			a.getDateFinEncheres();
+			a.getMisAPrix();
+			a.getVendeur();
+			a.getCategorieArticle();
 			try {
 				articleDao.insert(a);
 			} catch (BusinessException e) {
 				businessException.ajouterErreur(BLLException.INSERT_OBJET_ECHEC);
 			}
-		}else 
-			businessException.ajouterErreur(BLLException.INSERT_OBJET_ECHEC);
+	
 		return a;
 	}
 	
@@ -92,5 +71,13 @@ public class ArticleManager {
 	{
 		return this.articleDao.SelectById(id);
 		
+	}
+	private void validerDate(LocalDate dateDebutEncheres, LocalDate dateFinEncheres, BusinessException businessException) {
+		if(dateDebutEncheres==null || 
+			dateDebutEncheres.isAfter(LocalDate.now()) ||
+			(dateDebutEncheres.isEqual(LocalDate.now()) && dateFinEncheres.isAfter(LocalDate.now())))
+		{
+			businessException.ajouterErreur(BLLException.ECHEC);
+		}
 	}
 }

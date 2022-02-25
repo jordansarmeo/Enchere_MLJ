@@ -9,5 +9,6 @@ public interface UtilisateurDAO {
 	public Utilisateur SelectByPseudo(String pseudo) throws BusinessException;
 	public void upDate(Utilisateur u)throws BusinessException;
 	public void delete(int noUtilisateur)throws BusinessException;
+	public Utilisateur selectId(String pseudo)throws BusinessException;
 
 }

@@ -22,8 +22,8 @@ public class ArticleVendu implements Serializable{
 	
 	private Retrait lieuRetrait;
 	private Utilisateur Acquereur;
-	private Utilisateur Vendeur;
-	private Categorie categorieArticle;
+	private int Vendeur;
+	private int categorieArticle;
 	
 	
 	public ArticleVendu() {
@@ -31,6 +31,19 @@ public class ArticleVendu implements Serializable{
 	}
 
 	
+
+	public ArticleVendu(String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres,
+			int misAPrix, int vendeur, int categorieArticle) {
+		this.nomArticle = nomArticle;
+		this.description = description;
+		this.dateDebutEncheres = dateDebutEncheres;
+		this.dateFinEncheres = dateFinEncheres;
+		this.misAPrix = misAPrix;
+		Vendeur = vendeur;
+		this.categorieArticle = categorieArticle;
+	}
+
+
 
 	public ArticleVendu(Integer noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
 			LocalDate dateFinEncheres, int misAPrix, int prixVente, String etatVente) {
@@ -49,7 +62,7 @@ public class ArticleVendu implements Serializable{
 
 	public ArticleVendu(Integer noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
 			LocalDate dateFinEncheres, int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait,
-			Utilisateur vendeur, Categorie categorieArticle) {
+			int vendeur, int categorieArticle) {
 		this.nomArticle = nomArticle;
 		this.description = description;
 		this.dateDebutEncheres = dateDebutEncheres;
@@ -58,14 +71,14 @@ public class ArticleVendu implements Serializable{
 		this.prixVente = prixVente;
 		this.etatVente = etatVente;
 		this.lieuRetrait = lieuRetrait;
-		Vendeur = vendeur;
+		this.Vendeur = vendeur;
 		this.categorieArticle = categorieArticle;
 		setNoArticle(noArticle);
 	}
 
 	public ArticleVendu(Integer noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
 			LocalDate dateFinEncheres, int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait,
-			Utilisateur acquereur, Utilisateur vendeur, Categorie categorieArticle) {
+			Utilisateur acquereur, int vendeur, int categorieArticle) {
 		this.nomArticle = nomArticle;
 		this.description = description;
 		this.dateDebutEncheres = dateDebutEncheres;
@@ -75,7 +88,7 @@ public class ArticleVendu implements Serializable{
 		this.etatVente = etatVente;
 		this.lieuRetrait = lieuRetrait;
 		Acquereur = acquereur;
-		Vendeur = vendeur;
+		this.Vendeur = vendeur;
 		this.categorieArticle = categorieArticle;
 		setNoArticle(noArticle);
 	}
@@ -83,7 +96,7 @@ public class ArticleVendu implements Serializable{
 
 	public ArticleVendu(String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres,
 			int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait, Utilisateur acquereur,
-			Utilisateur vendeur, Categorie categorieArticle) {
+			int vendeur, int categorieArticle) {
 		this.nomArticle = nomArticle;
 		this.description = description;
 		this.dateDebutEncheres = dateDebutEncheres;
@@ -93,14 +106,14 @@ public class ArticleVendu implements Serializable{
 		this.etatVente = etatVente;
 		this.lieuRetrait = lieuRetrait;
 		Acquereur = acquereur;
-		Vendeur = vendeur;
+		this.Vendeur = vendeur;
 		this.categorieArticle = categorieArticle;
 	}
 
 
 	public ArticleVendu(String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres,
-			int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait, Utilisateur vendeur,
-			Categorie categorieArticle) {
+			int misAPrix, int prixVente, String etatVente, Retrait lieuRetrait, int vendeur,
+			int categorieArticle) {
 		this.nomArticle = nomArticle;
 		this.description = description;
 		this.dateDebutEncheres = dateDebutEncheres;
@@ -109,7 +122,7 @@ public class ArticleVendu implements Serializable{
 		this.prixVente = prixVente;
 		this.etatVente = etatVente;
 		this.lieuRetrait = lieuRetrait;
-		Vendeur = vendeur;
+		this.Vendeur = vendeur;
 		this.categorieArticle = categorieArticle;
 	}
 
@@ -219,22 +232,22 @@ public class ArticleVendu implements Serializable{
 	}
 
 
-	public Utilisateur getVendeur() {
+	public int getVendeur() {
 		return Vendeur;
 	}
 
 
-	public void setVendeur(Utilisateur vendeur) {
+	public void setVendeur(int vendeur) {
 		Vendeur = vendeur;
 	}
 
 
-	public Categorie getCategorieArticle() {
+	public int getCategorieArticle() {
 		return categorieArticle;
 	}
 
 
-	public void setCategorieArticle(Categorie categorieArticle) {
+	public void setCategorieArticle(int categorieArticle) {
 		this.categorieArticle = categorieArticle;
 	}
 

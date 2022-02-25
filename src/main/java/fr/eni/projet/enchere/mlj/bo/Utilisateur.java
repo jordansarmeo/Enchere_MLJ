@@ -43,6 +43,12 @@ public class Utilisateur implements Serializable{
 
 
 
+	public Utilisateur(Integer noUtilisateur) {
+		this.noUtilisateur = noUtilisateur;
+	}
+
+
+
 	public Utilisateur(Integer noUtilisateur, String pseudo, String nom, String prenom, String email, int telephone,
 			String rue, int codePostal, String ville, String motDePasse) {
 		this.noUtilisateur = noUtilisateur;

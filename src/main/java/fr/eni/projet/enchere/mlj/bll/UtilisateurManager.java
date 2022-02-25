@@ -103,4 +103,9 @@ public class UtilisateurManager {
 	public Utilisateur selectionnerAutre(String pseudo) throws BusinessException{
 		return this.utilisateurDao.SelectByPseudo(pseudo);
 	}
+	
+	public Utilisateur selectId(String pseudo)throws BusinessException
+	{
+		return this.utilisateurDao.selectId(pseudo);
+	}
 }

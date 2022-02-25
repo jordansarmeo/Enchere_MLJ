@@ -22,7 +22,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 	private static final String SelectByPseudo="SELECT  noUtilisateur, pseudo, nom, prenom, email,telephone, rue, code_postal, ville from usilisateurs where pseudo=?";
 	private static final String UpDate = "update utilisateurs set nom=?,prenom=?, telephone=?, rue =?, code_postal=? , ville=?, mot_de_passe=? where pseudo=?";
 	private static final String Delete = "delete from Utilisateurs where noUtilisateur=?";
-	
+	private static final String SelectId = "select no_utilisateur from UTILISATEURS where pseudo=?";
 	
 	
 	public void insert(Utilisateur u) throws BusinessException {
@@ -156,7 +156,28 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO{
 	}
 
 	
-	
+	public Utilisateur selectId(String pseudo)throws BusinessException
+	{
+		ResultSet rs = null;
+		Utilisateur u = new Utilisateur();
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			PreparedStatement pstmt = cnx.prepareStatement(SelectId);
+			pstmt.setString(1, pseudo);
+			
+			rs = pstmt.executeQuery();
+			
+			
+			if(rs.next()) {
+				u= new Utilisateur(rs.getInt("no_utilisateur"));
+			}
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		
+		}	return u;
+	}
 	
 	
 }

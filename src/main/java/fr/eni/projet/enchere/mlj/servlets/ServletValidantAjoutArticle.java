@@ -11,10 +11,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.eni.projet.enchere.mlj.BusinessException;
 import fr.eni.projet.enchere.mlj.bll.ArticleManager;
+import fr.eni.projet.enchere.mlj.bll.UtilisateurManager;
 import fr.eni.projet.enchere.mlj.bo.ArticleVendu;
+import fr.eni.projet.enchere.mlj.bo.Utilisateur;
 
 
 /**
@@ -36,14 +39,30 @@ public class ServletValidantAjoutArticle extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String nomArticle = null;
+		
+		HttpSession session = request.getSession();
+		String userName =(String)session.getAttribute("userName"); 
+		UtilisateurManager uM = new UtilisateurManager();
+		Utilisateur uid= new Utilisateur();
+		try {
+			uid = uM.selectId(userName);
+			
+		} catch (BusinessException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		System.out.println(uid.getNoUtilisateur());
+		int vendeur =uid.getNoUtilisateur();
+		String nomArticle = null;
 		 String description = null;
 		 LocalDate dateDebutEncheres = null;
 		 LocalDate dateFinEncheres = null ;
 		 int misAPrix = 0;
 		 int prixVente = 0;
 		 
-		 String categorieArticle;
+		 int categorieArticle;
 		 String rue;
 		 int codePostal;
 		 String ville;
@@ -78,12 +97,13 @@ public class ServletValidantAjoutArticle extends HttpServlet {
 		 codePostal=Integer.parseInt(request.getParameter("codePostal"));
 		 ville=request.getParameter("ville");
 		 
-		 categorieArticle =request.getParameter("categorieArticle");
-		
-				 ArticleVendu art = new ArticleVendu();
+		 categorieArticle =Integer.parseInt(request.getParameter("categorieArticle"));
+		 
+				 ArticleManager artMan = new ArticleManager();
 				
 						try {
-							new ArticleManager().ajoutArticle(art);
+							ArticleVendu art = artMan.ajoutArticle(nomArticle, description, dateDebutEncheres, dateFinEncheres, misAPrix, vendeur, categorieArticle);
+							request.setAttribute("articles_vendus", art);
 						} catch (BusinessException e) {
 							e.printStackTrace();
 						}

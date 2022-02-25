@@ -45,8 +45,7 @@ public class zonesecure extends HttpServlet {
  
     	//check for null and empty values.
     	if(userName == null || password == null ){
-    		out.print("Please enter both username " +
-    				"and password. <br/><br/>");
+    		out.print("Veuillez entrer un pseudo et un mot de passe. <br/><br/>");
     		RequestDispatcher requestDispatcher = 
     			request.getRequestDispatcher("/login.html");
     		requestDispatcher.include(request, response);
@@ -66,7 +65,7 @@ public class zonesecure extends HttpServlet {
                 
     	}else{
     		out.print("Wrong username or password. <br/><br/>");
-    		RequestDispatcher requestDispatcher =request.getRequestDispatcher("/login.html");
+    		RequestDispatcher requestDispatcher =request.getRequestDispatcher("/index.html");
     		requestDispatcher.include(request, response);
     	}
 	}

@@ -144,7 +144,7 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px">
+          <div class="card mb-3 shadow-sm p-3 mb-5 bg-body rounded" style="max-width: 540px">
             <div class="row g-0">
               <div class="col-md-4">
               <button type="button" ><a href="PageEncherir.html">
@@ -168,7 +168,7 @@
         </div>
         
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px">
+          <div class="card mb-3 shadow-sm p-3 mb-5 bg-body rounded" style="max-width: 540px">
             <div class="row g-0">
               <div class="col-md-4">
                <button type="button" ><a href="PageEncherir2.html">
